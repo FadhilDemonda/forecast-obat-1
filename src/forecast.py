@@ -29,6 +29,7 @@ def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict) -
         feat = build_features(hist, id_map)
         row = feat[feat["tanggal"] == day]
         pred = np.clip(model.predict(row[FEATURES]), 0, None)
+        pred = np.where(pred < 0.01, 0.0, pred)
         pmap = dict(zip(row["id_obat"], pred))
         mask = hist["tanggal"] == day
         hist.loc[mask, "qty_keluar"] = hist.loc[mask, "id_obat"].map(pmap).astype("float32")

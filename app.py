@@ -75,7 +75,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-CACHE_VERSION = "v4_dark_mode"
+CACHE_VERSION = "v5_clean_zero_forecast"
 
 
 @st.cache_data(show_spinner="Membersihkan data & zero-filling...")
@@ -167,6 +167,8 @@ with tab1:
         ax.plot(h["tanggal"], h["qty_keluar"], label="Aktual", color="#38bdf8", lw=1.8)
         ax.plot(f["tanggal"], f["prediksi"], label="Forecast", color="#fb7185", marker="o", ms=4, lw=2)
         ax.axvline(res["max_date"], color="#94a3b8", ls=":", lw=1.5, label="Batas Forecast")
+        ymax = max(float(h["qty_keluar"].max() if len(h) else 0), float(f["prediksi"].max() if len(f) else 0))
+        ax.set_ylim(bottom=0, top=max(1.0, ymax * 1.15))
         ax.set_ylabel("Qty keluar", color="#c9d1d9", fontsize=10)
         ax.legend(frameon=True, facecolor="#0d1117", edgecolor="#30363d")
         fig.autofmt_xdate()
@@ -199,6 +201,8 @@ with tab2:
     ax.plot(g["tanggal"], g["qty_keluar"], label="Aktual", marker="o", ms=4, color="#38bdf8", lw=1.8)
     ax.plot(g["tanggal"], g["pred_xgb"], label="XGBoost", marker="o", ms=4, color="#fb7185", lw=2)
     ax.plot(g["tanggal"], g["pred_sma7"], label="Baseline SMA-7", ls="--", color="#facc15", lw=1.6)
+    ymax_ho = max(float(g["qty_keluar"].max() if len(g) else 0), float(g["pred_xgb"].max() if len(g) else 0), float(g["pred_sma7"].max() if len(g) else 0))
+    ax.set_ylim(bottom=0, top=max(1.0, ymax_ho * 1.15))
     ax.set_ylabel("Qty keluar", color="#c9d1d9", fontsize=10)
     ax.legend(frameon=True, facecolor="#0d1117", edgecolor="#30363d")
     fig.autofmt_xdate()

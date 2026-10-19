@@ -108,7 +108,8 @@ def run_pipeline(daily: pd.DataFrame, horizon: int = 14) -> dict:
         eval_m.fit(tr_cat[FEATURES], tr_cat["qty_keluar"], verbose=False)
         eval_models[cat] = eval_m
 
-        te_cat["pred_xgb"] = np.clip(eval_m.predict(te_cat[FEATURES]), 0, None)
+        pred = np.clip(eval_m.predict(te_cat[FEATURES]), 0, None)
+        te_cat["pred_xgb"] = np.where(pred < 0.01, 0.0, pred)
         te_cat["pred_sma7"] = te_cat["rolling_mean_7"].fillna(0)
         test_cat_list.append(te_cat)
 
