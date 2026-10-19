@@ -10,11 +10,72 @@ from src.data_loader import group_mapping, load_daily
 from src.explain import feature_impact
 from src.train_xgb import run_pipeline, save_model
 
+# ---------------------------------------------------------------- dark theme for plots
+plt.style.use("dark_background")
+plt.rcParams.update({
+    "figure.facecolor": "#161b22",
+    "axes.facecolor": "#161b22",
+    "axes.edgecolor": "#30363d",
+    "axes.labelcolor": "#c9d1d9",
+    "xtick.color": "#8b949e",
+    "ytick.color": "#8b949e",
+    "grid.color": "#21262d",
+    "text.color": "#f0f6fc",
+    "legend.facecolor": "#0d1117",
+    "legend.edgecolor": "#30363d",
+})
+
 DEFAULT_CSV = "data/raw/test1.csv"
-st.set_page_config(page_title="Forecast Pengeluaran Obat", layout="wide")
+st.set_page_config(page_title="Forecast Pengeluaran Obat", layout="wide", page_icon="💊")
+
+# Custom Dark Mode styling
+st.markdown("""
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+    html, body, [class*="css"] {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    [data-testid="stMetric"] {
+        background: linear-gradient(145deg, #161b22 0%, #1f242c 100%);
+        border: 1px solid #30363d;
+        border-radius: 12px;
+        padding: 16px 20px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    [data-testid="stMetric"]:hover {
+        transform: translateY(-2px);
+        border-color: #00d4b2;
+    }
+    [data-testid="stMetricLabel"] {
+        color: #8b949e !important;
+        font-weight: 500;
+        font-size: 0.85rem;
+    }
+    [data-testid="stMetricValue"] {
+        color: #f0f6fc !important;
+        font-weight: 700;
+    }
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 8px;
+        border-bottom: 1px solid #30363d;
+    }
+    .stTabs [data-baseweb="tab"] {
+        border-radius: 8px 8px 0 0;
+        padding: 8px 18px;
+        color: #8b949e;
+        transition: color 0.2s;
+    }
+    .stTabs [aria-selected="true"] {
+        color: #00d4b2 !important;
+        border-bottom: 2px solid #00d4b2 !important;
+        background: transparent;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 
-CACHE_VERSION = "v3_per_category_models"
+CACHE_VERSION = "v4_dark_mode"
 
 
 @st.cache_data(show_spinner="Membersihkan data & zero-filling...")
@@ -102,10 +163,13 @@ with tab1:
         h = hist[hist["id_obat"] == show].tail(60)
         f = fc[fc["id_obat"] == show]
         fig, ax = plt.subplots(figsize=(11, 3.8))
-        ax.plot(h["tanggal"], h["qty_keluar"], label="Aktual", color="#1f77b4")
-        ax.plot(f["tanggal"], f["prediksi"], label="Forecast", color="#d62728", marker="o", ms=3)
-        ax.axvline(res["max_date"], color="gray", ls=":")
-        ax.set_ylabel("Qty keluar"); ax.legend(); fig.autofmt_xdate()
+        ax.grid(True, linestyle="--", alpha=0.3, color="#30363d")
+        ax.plot(h["tanggal"], h["qty_keluar"], label="Aktual", color="#38bdf8", lw=1.8)
+        ax.plot(f["tanggal"], f["prediksi"], label="Forecast", color="#fb7185", marker="o", ms=4, lw=2)
+        ax.axvline(res["max_date"], color="#94a3b8", ls=":", lw=1.5, label="Batas Forecast")
+        ax.set_ylabel("Qty keluar", color="#c9d1d9", fontsize=10)
+        ax.legend(frameon=True, facecolor="#0d1117", edgecolor="#30363d")
+        fig.autofmt_xdate()
         st.pyplot(fig)
 
     pivot = fc.pivot_table(index=["id_obat", "nama_obat", "kategori_pareto"],
@@ -131,10 +195,14 @@ with tab2:
                        format_func=lambda i: label.get(i, i))
     g = ho[ho["id_obat"] == rid].sort_values("tanggal")
     fig, ax = plt.subplots(figsize=(11, 3.5))
-    ax.plot(g["tanggal"], g["qty_keluar"], label="Aktual", marker="o", ms=3)
-    ax.plot(g["tanggal"], g["pred_xgb"], label="XGBoost", marker="o", ms=3)
-    ax.plot(g["tanggal"], g["pred_sma7"], label="Baseline SMA-7", ls="--")
-    ax.legend(); fig.autofmt_xdate(); st.pyplot(fig)
+    ax.grid(True, linestyle="--", alpha=0.3, color="#30363d")
+    ax.plot(g["tanggal"], g["qty_keluar"], label="Aktual", marker="o", ms=4, color="#38bdf8", lw=1.8)
+    ax.plot(g["tanggal"], g["pred_xgb"], label="XGBoost", marker="o", ms=4, color="#fb7185", lw=2)
+    ax.plot(g["tanggal"], g["pred_sma7"], label="Baseline SMA-7", ls="--", color="#facc15", lw=1.6)
+    ax.set_ylabel("Qty keluar", color="#c9d1d9", fontsize=10)
+    ax.legend(frameon=True, facecolor="#0d1117", edgecolor="#30363d")
+    fig.autofmt_xdate()
+    st.pyplot(fig)
 
 # ---------------------------------------------------------------- SHAP
 with tab3:
@@ -154,8 +222,9 @@ with tab3:
         st.caption(f"Sumber: {imp.attrs.get('source', '')}")
 
     fig, ax = plt.subplots(figsize=(8, 5))
-    imp.iloc[::-1].plot.barh(x="fitur", y="dampak", ax=ax, legend=False, color="#2a9d8f")
-    ax.set_xlabel("Dampak rata-rata terhadap prediksi")
+    ax.grid(axis="x", linestyle="--", alpha=0.3, color="#30363d")
+    imp.iloc[::-1].plot.barh(x="fitur", y="dampak", ax=ax, legend=False, color="#00d4b2", edgecolor="#161b22")
+    ax.set_xlabel("Dampak rata-rata terhadap prediksi", color="#c9d1d9", fontsize=10)
     st.pyplot(fig)
 
 # ---------------------------------------------------------------- Data
