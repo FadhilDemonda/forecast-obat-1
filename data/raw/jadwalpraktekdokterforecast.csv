@@ -1,0 +1,1064 @@
+tanggal,dokter_sensor,SPESIALIS
+2026-09-17,"dr. A*** C*** D***, S***",ANAK
+2026-09-17,"dr. A*** H***, S***",ANAK
+2026-09-17,"dr. A*** M***, S***",ANAK
+2026-09-17,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-17,"dr. Y*** K***, S***",BEDAH ANAK
+2026-09-17,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-09-17,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-17,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-09-17,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-17,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-17,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-09-17,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-17,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-17,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-09-17,"dr. D*** R***, S***",KANDUNGAN
+2026-09-17,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-09-17,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-17,"dr. U*** P*** W, S***",KANDUNGAN
+2026-09-17,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-17,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-17,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-17,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-17,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-17,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-17,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-17,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-09-17,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-17,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-17,"dr. F***, Sp.M",MATA
+2026-09-17,"dr. P*** A*** T***, Sp.M",MATA
+2026-09-17,"dr. R*** P***,Sp.M",MATA
+2026-09-17,dr. A*** N*** Sp.P,PARU
+2026-09-17,"dr. T*** M*** S***, Sp.P",PARU
+2026-09-17,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-17,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-17,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-17,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-09-17,"dr. E*** M***, S***",REHABILITASI MEDIK
+2026-09-17,"dr. I*** F***, Sp.N",SARAF
+2026-09-17,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-17,"dr. S*** N***, Sp.S",SARAF
+2026-09-17,"dr. Y*** A***, Sp.S",SARAF
+2026-09-17,"dr. H***, S***-K***",THT - KL
+2026-09-17,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-17,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-17,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-18,"dr. A*** H***, S***",ANAK
+2026-09-18,"dr. A*** M***, S***",ANAK
+2026-09-18,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-18,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-09-18,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-09-18,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-09-18,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-18,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-18,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-18,"drg. P*** J*** P***,Sp.R***,Subsp. R.D.P (K)",GIGI RADIOLOGI
+2026-09-18,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-18,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-18,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-09-18,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-09-18,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-18,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-18,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-18,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-18,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-09-18,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-09-18,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-18,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-18,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-18,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-18,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-09-18,"dr. F***, Sp.M",MATA
+2026-09-18,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-18,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-09-18,"dr. P*** A***, Sp.O***",ORTHOPEDI
+2026-09-18,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-09-18,"dr. H*** S***, Sp.P",PARU
+2026-09-18,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-09-18,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-18,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-18,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-18,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-09-18,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-09-18,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-09-18,"dr. I*** F***, Sp.N",SARAF
+2026-09-18,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-18,"dr. S*** N***, Sp.S",SARAF
+2026-09-18,"dr. Y*** A***, Sp.S",SARAF
+2026-09-18,"dr. H***, S***-K***",THT - KL
+2026-09-18,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-18,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-18,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-19,"dr. A*** H***, S***",ANAK
+2026-09-19,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-19,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-09-19,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-09-19,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-19,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-09-19,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-19,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-19,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-19,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-09-19,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-09-19,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-19,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-19,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-09-19,"dr. N*** A*** H***, Sp.K***",KEDOKTERAN JIWA
+2026-09-19,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-19,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-19,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-09-19,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-09-19,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-19,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-19,"dr. P*** A*** T***, Sp.M",MATA
+2026-09-19,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-09-19,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-19,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-19,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-19,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-09-19,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-09-19,"dr. S*** N***, Sp.S",SARAF
+2026-09-19,"dr. Y*** A***, Sp.S",SARAF
+2026-09-19,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-19,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-19,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-19,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-20,"dr. A*** C*** D***, S***",ANAK
+2026-09-20,"dr. A*** H***, S***",ANAK
+2026-09-20,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-20,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-20,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-09-20,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-20,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-20,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-09-20,"dr. P*** A*** T***, Sp.M",MATA
+2026-09-20,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-20,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-20,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-20,"dr. H***, S***-K***",THT - KL
+2026-09-20,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-21,"dr. A*** B***, Sp.A (K)",ANAK
+2026-09-21,"dr. A*** H***, S***",ANAK
+2026-09-21,"dr. A*** M***, S***",ANAK
+2026-09-21,"dr. D*** A***, Sp.A",ANAK
+2026-09-21,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-09-21,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-09-21,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-09-21,"dr. R*** A*** B***,Sp.B***",BEDAH SYARAF
+2026-09-21,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-21,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-21,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-21,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-21,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-21,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-21,"dr. D*** R***, S***",KANDUNGAN
+2026-09-21,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-09-21,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-21,"dr. U*** P*** W, S***",KANDUNGAN
+2026-09-21,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-21,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-21,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-21,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-09-21,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-21,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-21,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-21,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-21,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-21,"dr. H*** P***, S***, M***, F***",MATA
+2026-09-21,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-21,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-09-21,"dr. H*** S***, Sp.P",PARU
+2026-09-21,"dr. T*** M*** S***, Sp.P",PARU
+2026-09-21,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-09-21,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-21,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-21,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-21,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-21,"drg. R*** P***, Sp.P***",PERIODONTI
+2026-09-21,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-09-21,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-09-21,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-21,"dr. S*** N***, Sp.S",SARAF
+2026-09-21,"dr. Y*** A***, Sp.S",SARAF
+2026-09-21,"dr. H***, S***-K***",THT - KL
+2026-09-21,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-21,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-21,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-22,"dr. A*** H***, S***",ANAK
+2026-09-22,"dr. A*** M***, S***",ANAK
+2026-09-22,"dr. D*** A***, Sp.A",ANAK
+2026-09-22,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-22,"dr. Y*** K***, S***",BEDAH ANAK
+2026-09-22,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-09-22,"drg. A***, Sp.B***",BEDAH MULUT
+2026-09-22,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-22,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-09-22,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-22,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-09-22,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-22,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-09-22,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-22,"dr. U*** P*** W, S***",KANDUNGAN
+2026-09-22,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-22,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-22,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-22,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-22,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-22,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-22,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-22,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-22,"dr. F***, Sp.M",MATA
+2026-09-22,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-22,"dr. R*** P***,Sp.M",MATA
+2026-09-22,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-09-22,dr. A*** N*** Sp.P,PARU
+2026-09-22,"dr. P*** H***, S***",PARU
+2026-09-22,"dr. T*** M*** S***, Sp.P",PARU
+2026-09-22,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-22,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-22,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-22,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-09-22,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-09-22,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-09-22,"dr. I*** F***, Sp.N",SARAF
+2026-09-22,"dr. S*** N***, Sp.S",SARAF
+2026-09-22,"dr. Y*** A***, Sp.S",SARAF
+2026-09-22,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-22,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-22,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-22,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-23,"dr. A*** B***, Sp.A (K)",ANAK
+2026-09-23,"dr. A*** H***, S***",ANAK
+2026-09-23,"dr. A*** M***, S***",ANAK
+2026-09-23,"dr. D*** A***, Sp.A",ANAK
+2026-09-23,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-09-23,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-09-23,"dr. R*** A*** B***,Sp.B***",BEDAH SYARAF
+2026-09-23,"dr. L***, Sp.B",BEDAH UMUM
+2026-09-23,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-23,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-23,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-23,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-23,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-09-23,"dr. D*** R***, S***",KANDUNGAN
+2026-09-23,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-09-23,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-23,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-23,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-23,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-23,"dr. J*** J*** R S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-23,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-23,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-23,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-23,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-23,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-09-23,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-23,"dr. H*** P***, S***, M***, F***",MATA
+2026-09-23,"dr. R*** P***,Sp.M",MATA
+2026-09-23,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-09-23,"dr. H*** S***, Sp.P",PARU
+2026-09-23,"dr. P*** H***, S***",PARU
+2026-09-23,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-09-23,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-23,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-23,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-23,"drg. R*** P***, Sp.P***",PERIODONTI
+2026-09-23,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-09-23,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-23,"dr. S*** N***, Sp.S",SARAF
+2026-09-23,"dr. H***, S***-K***",THT - KL
+2026-09-23,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-23,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-24,"dr. A*** C*** D***, S***",ANAK
+2026-09-24,"dr. A*** H***, S***",ANAK
+2026-09-24,"dr. A*** M***, S***",ANAK
+2026-09-24,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-24,"dr. Y*** K***, S***",BEDAH ANAK
+2026-09-24,"drg. A***, Sp.B***",BEDAH MULUT
+2026-09-24,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-24,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-09-24,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-24,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-24,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-09-24,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-24,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-24,"dr. D*** R***, S***",KANDUNGAN
+2026-09-24,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-09-24,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-24,"dr. U*** P*** W, S***",KANDUNGAN
+2026-09-24,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-24,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-24,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-24,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-24,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-24,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-24,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-24,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-09-24,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-24,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-24,"dr. F***, Sp.M",MATA
+2026-09-24,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-24,"dr. R*** P***,Sp.M",MATA
+2026-09-24,dr. A*** N*** Sp.P,PARU
+2026-09-24,"dr. T*** M*** S***, Sp.P",PARU
+2026-09-24,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-24,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-24,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-24,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-09-24,"dr. I*** F***, Sp.N",SARAF
+2026-09-24,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-24,"dr. S*** N***, Sp.S",SARAF
+2026-09-24,"dr. Y*** A***, Sp.S",SARAF
+2026-09-24,"dr. H***, S***-K***",THT - KL
+2026-09-24,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-24,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-24,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-25,"dr. A*** B***, Sp.A (K)",ANAK
+2026-09-25,"dr. A*** H***, S***",ANAK
+2026-09-25,"dr. A*** M***, S***",ANAK
+2026-09-25,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-25,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-09-25,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-09-25,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-09-25,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-25,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-25,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-25,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-25,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-25,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-09-25,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-09-25,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-09-25,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-25,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-25,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-25,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-25,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-09-25,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-09-25,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-25,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-25,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-25,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-25,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-09-25,"dr. F***, Sp.M",MATA
+2026-09-25,"dr. H*** P***, S***, M***, F***",MATA
+2026-09-25,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-25,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-09-25,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-09-25,"dr. H*** S***, Sp.P",PARU
+2026-09-25,"dr. P*** H***, S***",PARU
+2026-09-25,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-09-25,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-25,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-25,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-25,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-09-25,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-09-25,"dr. I*** F***, Sp.N",SARAF
+2026-09-25,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-25,"dr. S*** N***, Sp.S",SARAF
+2026-09-25,"dr. Y*** A***, Sp.S",SARAF
+2026-09-25,"dr. H***, S***-K***",THT - KL
+2026-09-25,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-25,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-25,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-26,"dr. A*** H***, S***",ANAK
+2026-09-26,"dr. A*** M***, S***",ANAK
+2026-09-26,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-26,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-09-26,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-26,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-09-26,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-26,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-26,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-26,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-09-26,"dr. D*** R***, S***",KANDUNGAN
+2026-09-26,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-09-26,"dr. U*** P*** W, S***",KANDUNGAN
+2026-09-26,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-26,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-26,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-09-26,"dr. N*** A*** H***, Sp.K***",KEDOKTERAN JIWA
+2026-09-26,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-26,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-09-26,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-09-26,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-26,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-26,"dr. P*** A*** T***, Sp.M",MATA
+2026-09-26,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-09-26,"dr. P*** A***, Sp.O***",ORTHOPEDI
+2026-09-26,dr. A*** N*** Sp.P,PARU
+2026-09-26,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-26,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-26,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-26,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-09-26,"dr. S*** N***, Sp.S",SARAF
+2026-09-26,"dr. Y*** A***, Sp.S",SARAF
+2026-09-26,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-26,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-26,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-27,"dr. A*** C*** D***, S***",ANAK
+2026-09-27,"dr. A*** H***, S***",ANAK
+2026-09-27,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-27,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-27,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-27,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-09-27,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-09-27,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-27,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-27,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-09-27,"dr. P*** A*** T***, Sp.M",MATA
+2026-09-27,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-27,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-27,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-27,"dr. H***, S***-K***",THT - KL
+2026-09-27,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-28,"dr. A*** B***, Sp.A (K)",ANAK
+2026-09-28,"dr. A*** H***, S***",ANAK
+2026-09-28,"dr. A*** M***, S***",ANAK
+2026-09-28,"dr. D*** A***, Sp.A",ANAK
+2026-09-28,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-28,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-09-28,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-09-28,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-09-28,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-28,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-28,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-09-28,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-09-28,"dr. A*** W***, S***, F***",JANTUNG
+2026-09-28,"dr. D*** R***, S***",KANDUNGAN
+2026-09-28,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-09-28,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-28,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-28,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-28,"dr. J*** J*** R S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-28,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-09-28,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-28,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-28,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-09-28,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-28,"dr. H*** P***, S***, M***, F***",MATA
+2026-09-28,"dr. K*** M*** A***, Sp.M",MATA
+2026-09-28,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-09-28,"dr. H*** S***, Sp.P",PARU
+2026-09-28,"dr. T*** M*** S***, Sp.P",PARU
+2026-09-28,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-09-28,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-28,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-28,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-28,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-28,"drg. R*** P***, Sp.P***",PERIODONTI
+2026-09-28,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-09-28,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-09-28,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-09-28,"dr. S*** N***, Sp.S",SARAF
+2026-09-28,"dr. Y*** A***, Sp.S",SARAF
+2026-09-28,"dr. H***, S***-K***",THT - KL
+2026-09-28,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-28,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-28,"dr. I*** O***, Sp.U",UROLOGI
+2026-09-29,"dr. A*** C*** D***, S***",ANAK
+2026-09-29,"dr. A*** H***, S***",ANAK
+2026-09-29,"dr. A*** M***, S***",ANAK
+2026-09-29,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-09-29,"dr. Y*** K***, S***",BEDAH ANAK
+2026-09-29,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-09-29,"drg. A***, Sp.B***",BEDAH MULUT
+2026-09-29,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-09-29,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-09-29,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-09-29,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-09-29,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-09-29,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-09-29,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-09-29,"dr. U*** P*** W, S***",KANDUNGAN
+2026-09-29,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-09-29,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-09-29,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-09-29,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-09-29,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-09-29,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-09-29,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-09-29,"dr. F***, Sp.M",MATA
+2026-09-29,"dr. H*** P***, S***, M***, F***",MATA
+2026-09-29,"dr. P*** A*** T***, Sp.M",MATA
+2026-09-29,"dr. R*** P***,Sp.M",MATA
+2026-09-29,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-09-29,dr. A*** N*** Sp.P,PARU
+2026-09-29,"dr. P*** H***, S***",PARU
+2026-09-29,"dr. T*** M*** S***, Sp.P",PARU
+2026-09-29,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-09-29,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-09-29,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-09-29,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-09-29,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-09-29,"dr. E*** M***, S***",REHABILITASI MEDIK
+2026-09-29,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-09-29,"dr. I*** F***, Sp.N",SARAF
+2026-09-29,"dr. S*** N***, Sp.S",SARAF
+2026-09-29,"dr. Y*** A***, Sp.S",SARAF
+2026-09-29,"dr. I***, Sp.T***-K***",THT - KL
+2026-09-29,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-09-29,"dr. A*** A***, Sp.U",UROLOGI
+2026-09-29,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-01,"dr. A*** C*** D***, S***",ANAK
+2026-10-01,"dr. A*** H***, S***",ANAK
+2026-10-01,"dr. A*** M***, S***",ANAK
+2026-10-01,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-01,"dr. Y*** K***, S***",BEDAH ANAK
+2026-10-01,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-10-01,"drg. A***, Sp.B***",BEDAH MULUT
+2026-10-01,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-01,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-10-01,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-01,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-01,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-10-01,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-10-01,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-01,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-10-01,"dr. D*** R***, S***",KANDUNGAN
+2026-10-01,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-01,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-01,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-01,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-01,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-01,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-01,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-01,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-10-01,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-01,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-10-01,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-01,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-01,"dr. F***, Sp.M",MATA
+2026-10-01,"dr. P*** A*** T***, Sp.M",MATA
+2026-10-01,"dr. R*** P***,Sp.M",MATA
+2026-10-01,dr. A*** N*** Sp.P,PARU
+2026-10-01,"dr. T*** M*** S***, Sp.P",PARU
+2026-10-01,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-01,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-01,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-01,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-10-01,"dr. E*** M***, S***",REHABILITASI MEDIK
+2026-10-01,"dr. I*** F***, Sp.N",SARAF
+2026-10-01,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-01,"dr. S*** N***, Sp.S",SARAF
+2026-10-01,"dr. Y*** A***, Sp.S",SARAF
+2026-10-01,"dr. H***, S***-K***",THT - KL
+2026-10-01,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-01,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-01,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-02,"dr. A*** B***, Sp.A (K)",ANAK
+2026-10-02,"dr. A*** H***, S***",ANAK
+2026-10-02,"dr. A*** M***, S***",ANAK
+2026-10-02,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-02,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-10-02,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-02,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-02,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-02,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-02,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-02,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-10-02,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-10-02,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-10-02,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-02,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-02,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-10-02,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-10-02,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-02,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-02,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-02,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-02,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-10-02,"dr. F***, Sp.M",MATA
+2026-10-02,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-02,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-02,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-10-02,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-10-02,"dr. H*** S***, Sp.P",PARU
+2026-10-02,"dr. P*** H***, S***",PARU
+2026-10-02,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-10-02,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-02,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-02,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-02,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-10-02,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-10-02,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-02,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-10-02,"dr. I*** F***, Sp.N",SARAF
+2026-10-02,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-02,"dr. S*** N***, Sp.S",SARAF
+2026-10-02,"dr. Y*** A***, Sp.S",SARAF
+2026-10-02,"dr. H***, S***-K***",THT - KL
+2026-10-02,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-02,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-02,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-03,"dr. A*** H***, S***",ANAK
+2026-10-03,"dr. A*** M***, S***",ANAK
+2026-10-03,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-03,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-10-03,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-10-03,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-10-03,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-03,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-10-03,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-03,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-10-03,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-03,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-03,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-10-03,"dr. D*** R***, S***",KANDUNGAN
+2026-10-03,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-10-03,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-03,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-03,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-10-03,"dr. N*** A*** H***, Sp.K***",KEDOKTERAN JIWA
+2026-10-03,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-03,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-10-03,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-10-03,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-10-03,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-03,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-03,"dr. P*** A*** T***, Sp.M",MATA
+2026-10-03,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-10-03,"dr. P*** A***, Sp.O***",ORTHOPEDI
+2026-10-03,dr. A*** N*** Sp.P,PARU
+2026-10-03,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-03,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-03,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-03,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-10-03,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-03,"dr. S*** N***, Sp.S",SARAF
+2026-10-03,"dr. Y*** A***, Sp.S",SARAF
+2026-10-03,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-10-03,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-03,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-04,"dr. A*** C*** D***, S***",ANAK
+2026-10-04,"dr. A*** H***, S***",ANAK
+2026-10-04,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-04,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-10-04,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-04,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-10-04,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-04,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-10-04,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-10-04,"dr. P*** A*** T***, Sp.M",MATA
+2026-10-04,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-04,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-04,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-04,"dr. H***, S***-K***",THT - KL
+2026-10-04,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-10-05,"dr. A*** B***, Sp.A (K)",ANAK
+2026-10-05,"dr. A*** H***, S***",ANAK
+2026-10-05,"dr. A*** M***, S***",ANAK
+2026-10-05,"dr. D*** A***, Sp.A",ANAK
+2026-10-05,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-10-05,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-10-05,"dr. R*** A*** B***,Sp.B***",BEDAH SYARAF
+2026-10-05,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-05,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-05,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-05,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-05,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-05,"dr. D*** R***, S***",KANDUNGAN
+2026-10-05,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-05,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-05,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-05,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-05,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-05,"dr. J*** J*** R S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-05,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-05,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-10-05,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-05,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-10-05,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-05,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-05,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-05,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-05,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-05,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-10-05,"dr. H*** S***, Sp.P",PARU
+2026-10-05,"dr. T*** M*** S***, Sp.P",PARU
+2026-10-05,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-10-05,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-05,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-05,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-05,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-05,"drg. R*** P***, Sp.P***",PERIODONTI
+2026-10-05,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-10-05,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-10-05,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-05,"dr. S*** N***, Sp.S",SARAF
+2026-10-05,"dr. Y*** A***, Sp.S",SARAF
+2026-10-05,"dr. H***, S***-K***",THT - KL
+2026-10-05,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-05,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-05,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-06,"dr. A*** C*** D***, S***",ANAK
+2026-10-06,"dr. A*** H***, S***",ANAK
+2026-10-06,"dr. D*** A***, Sp.A",ANAK
+2026-10-06,"dr. Y*** K***, S***",BEDAH ANAK
+2026-10-06,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-10-06,"drg. A***, Sp.B***",BEDAH MULUT
+2026-10-06,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-10-06,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-06,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-10-06,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-06,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-10-06,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-10-06,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-10-06,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-06,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-06,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-06,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-06,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-06,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-06,"drg. R*** S*** P***,Sp.K***",KONSERVASI GIGI
+2026-10-06,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-06,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-06,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-06,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-06,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-06,"dr. R*** P***,Sp.M",MATA
+2026-10-06,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-10-06,dr. A*** N*** Sp.P,PARU
+2026-10-06,"dr. P*** H***, S***",PARU
+2026-10-06,"dr. T*** M*** S***, Sp.P",PARU
+2026-10-06,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-06,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-06,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-06,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-10-06,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-10-06,"dr. E*** M***, S***",REHABILITASI MEDIK
+2026-10-06,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-06,"dr. I*** F***, Sp.N",SARAF
+2026-10-06,"dr. S*** N***, Sp.S",SARAF
+2026-10-06,"dr. Y*** A***, Sp.S",SARAF
+2026-10-06,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-06,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-10-06,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-06,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-07,"dr. A*** B***, Sp.A (K)",ANAK
+2026-10-07,"dr. A*** H***, S***",ANAK
+2026-10-07,"dr. A*** M***, S***",ANAK
+2026-10-07,"dr. D*** A***, Sp.A",ANAK
+2026-10-07,"dr. Y*** K***, S***",BEDAH ANAK
+2026-10-07,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-10-07,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-10-07,"dr. R*** A*** B***,Sp.B***",BEDAH SYARAF
+2026-10-07,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-07,"dr. L***, Sp.B",BEDAH UMUM
+2026-10-07,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-07,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-07,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-07,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-07,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-10-07,"dr. D*** R***, S***",KANDUNGAN
+2026-10-07,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-07,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-07,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-07,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-07,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-07,"dr. J*** J*** R S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-07,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-07,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-10-07,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-07,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-07,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-07,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-07,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-10-07,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-07,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-07,"dr. R*** P***,Sp.M",MATA
+2026-10-07,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-10-07,"dr. H*** S***, Sp.P",PARU
+2026-10-07,"dr. P*** H***, S***",PARU
+2026-10-07,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-10-07,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-07,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-07,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-07,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-10-07,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-07,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-10-07,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-07,"dr. S*** N***, Sp.S",SARAF
+2026-10-07,"dr. H***, S***-K***",THT - KL
+2026-10-07,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-07,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-07,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-08,"dr. A*** C*** D***, S***",ANAK
+2026-10-08,"dr. A*** H***, S***",ANAK
+2026-10-08,"dr. A*** M***, S***",ANAK
+2026-10-08,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-08,"dr. Y*** K***, S***",BEDAH ANAK
+2026-10-08,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-10-08,"drg. A***, Sp.B***",BEDAH MULUT
+2026-10-08,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-08,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-10-08,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-08,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-08,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-10-08,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-10-08,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-08,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-10-08,"dr. D*** R***, S***",KANDUNGAN
+2026-10-08,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-08,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-08,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-08,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-08,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-08,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-08,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-08,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-08,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-08,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-10-08,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-08,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-08,"dr. F***, Sp.M",MATA
+2026-10-08,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-08,"dr. R*** P***,Sp.M",MATA
+2026-10-08,dr. A*** N*** Sp.P,PARU
+2026-10-08,"dr. T*** M*** S***, Sp.P",PARU
+2026-10-08,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-08,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-08,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-08,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-10-08,"dr. E*** M***, S***",REHABILITASI MEDIK
+2026-10-08,"dr. I*** F***, Sp.N",SARAF
+2026-10-08,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-08,"dr. S*** N***, Sp.S",SARAF
+2026-10-08,"dr. Y*** A***, Sp.S",SARAF
+2026-10-08,"dr. H***, S***-K***",THT - KL
+2026-10-08,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-08,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-08,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-09,"dr. A*** B***, Sp.A (K)",ANAK
+2026-10-09,"dr. A*** H***, S***",ANAK
+2026-10-09,"dr. A*** M***, S***",ANAK
+2026-10-09,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-09,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-10-09,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-10-09,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-10-09,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-09,"dr. L***, Sp.B",BEDAH UMUM
+2026-10-09,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-09,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-09,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-09,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-10-09,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-10-09,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-09,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-09,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-09,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-09,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-10-09,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-10-09,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-09,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-09,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-09,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-09,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-10-09,"dr. F***, Sp.M",MATA
+2026-10-09,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-09,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-09,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-10-09,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-10-09,"dr. H*** S***, Sp.P",PARU
+2026-10-09,"dr. P*** H***, S***",PARU
+2026-10-09,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-10-09,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-09,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-09,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-09,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-10-09,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-10-09,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-09,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-10-09,"dr. I*** F***, Sp.N",SARAF
+2026-10-09,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-09,"dr. S*** N***, Sp.S",SARAF
+2026-10-09,"dr. Y*** A***, Sp.S",SARAF
+2026-10-09,"dr. H***, S***-K***",THT - KL
+2026-10-09,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-09,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-09,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-10,"dr. A*** H***, S***",ANAK
+2026-10-10,"dr. A*** M***, S***",ANAK
+2026-10-10,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-10,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-10-10,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-10-10,"drg. R*** G*** S***, Sp.B***",BEDAH MULUT
+2026-10-10,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-10,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-10-10,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-10,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-10,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-10-10,"dr. D*** R***, S***",KANDUNGAN
+2026-10-10,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-10,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-10,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-10,"dr. A*** P***, Sp.K***",KEDOKTERAN JIWA
+2026-10-10,"dr. N*** A*** H***, Sp.K***",KEDOKTERAN JIWA
+2026-10-10,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-10,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-10-10,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-10-10,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-10,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-10,"dr. P*** A*** T***, Sp.M",MATA
+2026-10-10,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-10-10,"dr. P*** A***, Sp.O***",ORTHOPEDI
+2026-10-10,dr. A*** N*** Sp.P,PARU
+2026-10-10,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-10,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-10,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-10,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-10-10,"dr. S*** N***, Sp.S",SARAF
+2026-10-10,"dr. Y*** A***, Sp.S",SARAF
+2026-10-10,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-10,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-10-10,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-10,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-11,"dr. A*** C*** D***, S***",ANAK
+2026-10-11,"dr. A*** H***, S***",ANAK
+2026-10-11,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-11,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-10-11,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-11,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-11,"drg. Y*** E***, Sp.K***",KONSERVASI GIGI
+2026-10-11,"dr. P*** A*** T***, Sp.M",MATA
+2026-10-11,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-11,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-11,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-11,"dr. H***, S***-K***",THT - KL
+2026-10-11,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-10-12,"dr. A*** H***, S***",ANAK
+2026-10-12,"dr. A*** M***, S***",ANAK
+2026-10-12,"dr. D*** A***, Sp.A",ANAK
+2026-10-12,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-10-12,"drg. S*** S*** N***, Sp.B***",BEDAH MULUT
+2026-10-12,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-10-12,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-12,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-12,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-12,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-12,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-12,"dr. D*** R***, S***",KANDUNGAN
+2026-10-12,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-12,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-12,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-12,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-12,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-12,"dr. J*** J*** R S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-12,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-12,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-10-12,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-12,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-12,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-12,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-12,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-12,"dr. K*** M*** A***, Sp.M",MATA
+2026-10-12,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-10-12,"dr. H*** S***, Sp.P",PARU
+2026-10-12,"dr. T*** M*** S***, Sp.P",PARU
+2026-10-12,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-10-12,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-12,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-12,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-12,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-12,"drg. R*** P***, Sp.P***",PERIODONTI
+2026-10-12,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-10-12,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-10-12,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-12,"dr. S*** N***, Sp.S",SARAF
+2026-10-12,"dr. H***, S***-K***",THT - KL
+2026-10-12,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-12,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-12,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-13,"dr. A*** C*** D***, S***",ANAK
+2026-10-13,"dr. A*** H***, S***",ANAK
+2026-10-13,"dr. A*** M***, S***",ANAK
+2026-10-13,"dr. D*** A***, Sp.A",ANAK
+2026-10-13,"dr. L*** S***, Sp.A (K)",ANAK NEUROLOGI
+2026-10-13,"dr. Y*** K***, S***",BEDAH ANAK
+2026-10-13,"drg. A*** P*** S*** P***, Sp.B***",BEDAH MULUT
+2026-10-13,"drg. A***, Sp.B***",BEDAH MULUT
+2026-10-13,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-13,"dr. M*** A*** H*** P***,Sp.B",BEDAH UMUM
+2026-10-13,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-13,"dr. M*** L***, Sp.B, S*** B*** (K), M***",BEDAH VASCULAR & ENDOVASCULAR
+2026-10-13,"dr. A*** R*** A***, M.B***, Sp.J***",JANTUNG
+2026-10-13,"dr. B*** U*** P***, Sp.O***",KANDUNGAN
+2026-10-13,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-13,"dr. U*** P*** W, S***",KANDUNGAN
+2026-10-13,"drg. R*** O*** R***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-13,"drg. R*** O***, S***",KEDOKTERAN GIGI ANAK
+2026-10-13,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-13,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-13,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-13,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-13,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-13,"dr. F***, Sp.M",MATA
+2026-10-13,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-13,"dr. P*** A*** T***, Sp.M",MATA
+2026-10-13,"dr. R*** P***,Sp.M",MATA
+2026-10-13,"dr. E*** B*** S***, S***, A***-K, F***",ORTHOPEDI
+2026-10-13,dr. A*** N*** Sp.P,PARU
+2026-10-13,"dr. P*** H***, S***",PARU
+2026-10-13,"dr. T*** M*** S***, Sp.P",PARU
+2026-10-13,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-13,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-13,"dr. W*** N*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-13,"drg. K*** M*** T***,Sp.P***",PERIODONTI
+2026-10-13,"drg. S*** Y*** M***, Sp.P***",PROSTHODONTI
+2026-10-13,"dr. E*** M***, S***",REHABILITASI MEDIK
+2026-10-13,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-13,"dr. I*** F***, Sp.N",SARAF
+2026-10-13,"dr. S*** N***, Sp.S",SARAF
+2026-10-13,"dr. Y*** A***, Sp.S",SARAF
+2026-10-13,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-13,"dr. R*** N*** S***, Sp.T***-K***",THT - KL
+2026-10-13,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-13,"dr. I*** O***, Sp.U",UROLOGI
+2026-10-14,"dr. A*** H***, S***",ANAK
+2026-10-14,"dr. A*** M***, S***",ANAK
+2026-10-14,"dr. Y*** K***, S***",BEDAH ANAK
+2026-10-14,"drg. N*** K*** S***,Sp.B***",BEDAH MULUT
+2026-10-14,"dr. M*** N***, Sp.B***",BEDAH SYARAF
+2026-10-14,"dr. R*** A*** B***,Sp.B***",BEDAH SYARAF
+2026-10-14,"dr. A*** F*** R***, S***",BEDAH UMUM
+2026-10-14,"dr. L***, Sp.B",BEDAH UMUM
+2026-10-14,"dr. M.M*** H***, S***",BEDAH UMUM
+2026-10-14,"dr. M*** W*** R***, S***",BEDAH UMUM
+2026-10-14,"dr. A*** I*** S*** P***, Sp.J***",JANTUNG
+2026-10-14,"dr. A*** W***, S***, F***",JANTUNG
+2026-10-14,"dr. A*** N***, Sp.O***",KANDUNGAN
+2026-10-14,"dr. D*** R***, S***",KANDUNGAN
+2026-10-14,"dr. F*** M***, Sp.O***",KANDUNGAN
+2026-10-14,"dr. M*** F*** C*** H***, Sp.O***",KANDUNGAN
+2026-10-14,"dr. Muh. S*** B***, S***",KANDUNGAN
+2026-10-14,"drg. A*** D*** S, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-14,"drg. R*** T*** W***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-14,"drg. S*** A*** R*** L***, Sp.K***",KEDOKTERAN GIGI ANAK
+2026-10-14,"dr. J*** J*** R S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-14,"dr. Y*** Y*** S***, Sp.K***",KEDOKTERAN JIWA
+2026-10-14,"drg. F*** D*** A*** ,Sp.K***",KONSERVASI GIGI
+2026-10-14,"drg. H*** R***,Sp.K***",KONSERVASI GIGI
+2026-10-14,"drg. S*** H*** M***, Sp.K***",KONSERVASI GIGI
+2026-10-14,"drg. V*** I*** K***, Sp.K***",KONSERVASI GIGI
+2026-10-14,"dr. E*** R***, S***",KULIT &  KELAMIN
+2026-10-14,"dr. I*** P*** S***,Sp.K***",KULIT &  KELAMIN
+2026-10-14,"dr. M*** S***,Sp.D***",KULIT &  KELAMIN
+2026-10-14,"dr. H*** P***, S***, M***, F***",MATA
+2026-10-14,"dr. R*** P***,Sp.M",MATA
+2026-10-14,"dr. V*** H*** P*** S***,Sp.O***",ORTHOPEDI
+2026-10-14,"dr. H*** S***, Sp.P",PARU
+2026-10-14,"dr. P*** H***, S***",PARU
+2026-10-14,"dr. I*** A***, Sp.P***",PENYAKIT DALAM 
+2026-10-14,"dr. L*** G***, S***,F***",PENYAKIT DALAM 
+2026-10-14,"dr. M*** W*** I***, S***",PENYAKIT DALAM 
+2026-10-14,"dr. P*** P*** U***, Sp.P***",PENYAKIT DALAM 
+2026-10-14,"drg. E*** T***, Sp.P***",PROSTHODONTI
+2026-10-14,"dr. H*** F***, Sp.K***",REHABILITASI MEDIK
+2026-10-14,"dr. R*** K***,Sp.K***",REHABILITASI MEDIK
+2026-10-14,"dr. M*** L*** B*** L, Sp.S",SARAF
+2026-10-14,"dr. S*** N***, Sp.S",SARAF
+2026-10-14,"dr. H***, S***-K***",THT - KL
+2026-10-14,"dr. I***, Sp.T***-K***",THT - KL
+2026-10-14,"dr. A*** A***, Sp.U",UROLOGI
+2026-10-14,"dr. I*** O***, Sp.U",UROLOGI

@@ -1,0 +1,103 @@
+SPESIALIS,dokter_sensor,jml_kunjungan,persen_kumulatif,kategori_pareto
+PENYAKIT DALAM ,"dr. M*** W*** I***, S***",31648,"12,49",A
+PENYAKIT DALAM ,"dr. L*** G***, S***,F***",22600,"15,80",A
+SARAF,"dr. S*** N***, Sp.S",19598,"18,68",A
+JANTUNG,"dr. A*** W***, S***, F***",19233,"21,50",A
+UROLOGI,"dr. A*** A***, Sp.U",16145,"23,87",A
+KONSERVASI GIGI,"drg. H*** R***,Sp.K***",15512,"26,14",A
+MATA,"dr. F***, Sp.M",15308,"28,39",A
+KEDOKTERAN JIWA,"dr. Y*** Y*** S***, Sp.K***",14014,"30,44",A
+KONSERVASI GIGI,"drg. S*** H*** M***, Sp.K***",13760,"32,46",A
+KONSERVASI GIGI,"drg. R*** S*** P***,Sp.K***",12817,"34,34",A
+REHABILITASI MEDIK,"dr. R*** K***,Sp.K***",12770,"36,21",A
+BEDAH MULUT,"drg. N*** K*** S***,Sp.B***",12112,"37,99",A
+THT - KL,"dr. I***, Sp.T***-K***",11948,"39,74",A
+SARAF,"dr. M*** L*** B*** L, Sp.S",11904,"41,49",A
+SARAF,"dr. Y*** A***, Sp.S",11393,"43,16",A
+KONSERVASI GIGI,"drg. V*** I*** K***, Sp.K***",10970,"44,77",A
+JANTUNG,"dr. A*** I*** S*** P***, Sp.J***",10841,"46,36",A
+MATA,"dr. H*** P***, S***, M***, F***",10131,"47,84",A
+KANDUNGAN,"dr. Muh. S*** B***, S***",9945,"49,30",A
+PARU,dr. A*** N*** Sp.P,9716,"50,73",B
+ANAK,"dr. A*** H***, S***",9245,"52,08",B
+KULIT &  KELAMIN,"dr. M*** S***,Sp.D***",9242,"53,44",B
+KEDOKTERAN GIGI ANAK,"drg. R*** O***, S***",9170,"54,78",B
+ANAK NEUROLOGI,"dr. L*** S***, Sp.A (K)",8953,"56,10",B
+BEDAH UMUM,"dr. A*** F*** R***, S***",8926,"57,40",B
+KEDOKTERAN GIGI ANAK,"drg. S*** A*** R*** L***, Sp.K***",8751,"58,69",B
+REHABILITASI MEDIK,"dr. E*** M***, S***",8711,"59,97",B
+BEDAH MULUT,"drg. A*** P*** S*** P***, Sp.B***",8574,"61,22",B
+MATA,"dr. K*** M*** A***, Sp.M",8543,"62,48",B
+UROLOGI,"dr. I*** O***, Sp.U",8482,"63,72",B
+PENYAKIT DALAM ,"dr. P*** P*** U***, Sp.P***",8433,"64,96",B
+KONSERVASI GIGI,"drg. Y*** E***, Sp.K***",8359,"66,18",B
+ANAK,"dr. A*** M***, S***",8234,"67,39",B
+KONSERVASI GIGI,"drg. F*** D*** A*** ,Sp.K***",7605,"68,51",B
+MATA,"dr. R*** P***,Sp.M",7203,"69,56",B
+ORTHOPEDI,"dr. E*** B*** S***, S***, A***-K, F***",7198,"70,62",B
+HEMODIALISA,"dr. I*** A***, Sp.P***(H***)",6816,"71,62",B
+BEDAH UMUM,"dr. M.M*** H***, S***",6325,"72,55",B
+PENYAKIT DALAM ,"dr. M*** I*** N***, Sp.P***",6151,"73,45",B
+THT - KL,"dr. H***, S***-K***",6126,"74,35",B
+MATA,"dr. P*** A*** T***, Sp.M",5661,"76,07",B
+JANTUNG,"dr. A*** R*** A***, M.B***, Sp.J***",5566,"76,89",B
+REHABILITASI MEDIK,"dr. H*** F***, Sp.K***",5458,"77,69",B
+KEDOKTERAN GIGI ANAK,"drg. R*** T*** W***, Sp.K***",5391,"78,48",B
+PARU,"dr. T*** M*** S***, Sp.P",5384,"79,27",B
+ORTHOPEDI,"dr. P*** A***, Sp.O***",5326,"80,05",B
+ORTHOPEDI,"dr. V*** H*** P*** S***,Sp.O***",5092,"80,80",B
+ANAK,"dr. A*** B***, Sp.A (K)",4864,"81,51",B
+KULIT &  KELAMIN,"dr. E*** R***, S***",4849,"82,22",B
+THT - KL,"dr. R*** N*** S***, Sp.T***-K***",4783,"82,93",B
+PARU,"dr. P*** H***, S***",4669,"83,61",B
+LABORATORIUM,"dr. C*** H***, Sp.P***(K), MARS.",4567,"84,28",B
+JANTUNG,"dr. A*** A*** K***, S***, F***",4560,"84,95",B
+KEDOKTERAN JIWA,"dr. J*** J*** R S***, Sp.K***",4431,"85,60",B
+BEDAH MULUT,"drg. R*** G*** S***, Sp.B***",4430,"86,25",B
+KANDUNGAN,"dr. U*** P*** W, S***",4126,"86,85",B
+BEDAH MULUT,"drg. S*** S*** N***, Sp.B***",4103,"87,46",B
+KANDUNGAN,"dr. D*** R***, S***",4040,"88,05",B
+BEDAH MULUT,"drg. A***, Sp.B***",4019,"89,23",B
+BEDAH UMUM,"dr. M*** W*** R***, S***",3925,"89,80",B
+PARU,"dr. H*** S***, Sp.P",3719,"90,35",C
+KULIT &  KELAMIN,"dr. I*** P*** S***,Sp.K***",3684,"90,89",C
+PENYAKIT DALAM ,"dr. V*** W***, S***, M.B***",3602,"91,42",C
+PENYAKIT DALAM ,"dr. W*** N*** U***, Sp.P***",3564,"91,94",C
+LABORATORIUM,"dr. M***, Sp.P***",3453,"92,45",C
+KEDOKTERAN GIGI ANAK,"drg. R*** O*** R***, Sp.K***",2998,"93,38",C
+PENYAKIT DALAM ,"dr. I*** A***, Sp.P***",2698,"94,19",C
+ANAK,"dr. A*** C*** D***, S***",2535,"94,95",C
+BEDAH ANAK,"dr. Y*** K***, S***",2464,"95,31",C
+KEDOKTERAN GIGI ANAK,"drg. A*** D*** S, Sp.K***",2158,"95,62",C
+KANDUNGAN,"dr. M*** F*** C*** H***, Sp.O***",2150,"95,94",C
+KANDUNGAN,"dr. F*** M***, Sp.O***",2100,"96,25",C
+BEDAH UMUM,"dr. M*** A*** H*** P***,Sp.B",1983,"96,84",C
+KEDOKTERAN JIWA,"dr. A*** P***, Sp.K***",1948,"97,12",C
+KEDOKTERAN JIWA,"dr. N*** A*** H***, Sp.K***",1565,"97,62",C
+HEMODIALISA,"dr. I W*** N***,Sp.P*** (H***)",1414,"97,82",C
+ANAK,"dr. D*** A***, Sp.A",1225,"98,19",C
+BEDAH VASCULAR & ENDOVASCULAR,"dr. M*** L***, Sp.B, S*** B*** (K), M***",1209,"98,37",C
+BEDAH MULUT,"drg. T*** H*** W*** P, Sp.B***",1114,"98,53",C
+KANDUNGAN,"dr. H*** F***, S***",1063,"98,69",C
+SARAF,"dr. I*** F***, Sp.N",1046,"98,84",C
+BEDAH SYARAF,"dr. M*** N***, Sp.B***",657,"99,04",C
+PROSTHODONTI,"drg. E*** T***, Sp.P***",628,"99,13",C
+KANDUNGAN,"dr. A*** K*** E***, S***",544,"99,21",C
+PERIODONTI,"drg. R*** P***, Sp.P***",500,"99,36",C
+PENYAKIT DALAM ,"dr. I W*** N***,Sp.P***",377,"99,47",C
+KANDUNGAN,"dr. A*** N***, Sp.O***",310,"99,62",C
+KANDUNGAN,"dr. B*** U*** P***, Sp.O***",261,"99,75",C
+BEDAH UMUM,"dr. L***, Sp.B",236,"99,78",C
+BEDAH SYARAF,"dr. R*** A*** B***,Sp.B***",222,"99,81",C
+PERIODONTI,"drg. K*** M*** T***,Sp.P***",74,"99,95",C
+PROSTHODONTI,"drg. S*** Y*** M***, Sp.P***",71,"99,96",C
+MATA,"dr. M*** P***, Sp.M",67,"99,97",C
+LABORATORIUM,"dr. N*** N***, Sp.M***",22,"99,98",C
+GIGI RADIOLOGI,"drg. P*** J*** P***,Sp.R***,Subsp. R.D.P (K)",16,"99,98",C
+UMUM,dr. M*** G***,10,"99,99",C
+ANAK,"dr. L*** S***, Sp.A (N***)",4,"100,00",C
+UMUM,"dr. D*** E*** P, M***",2,"100,00",C
+UMUM,dr. A*** K*** W***,1,"100,00",C
+UMUM,dr. E***,1,"100,00",C
+UMUM,dr. R*** P***,1,"100,00",C
+LABORATORIUM,"dr. Z*** N***, Sp.P***",1,"100,00",C

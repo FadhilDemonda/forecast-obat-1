@@ -1,0 +1,83 @@
+{
+  "seed": 42,
+  "folds": [
+    {
+      "fold": 1,
+      "split_date": "2026-08-19",
+      "holdout_end": "2026-09-02",
+      "drugs": 611,
+      "unseen_test_drugs_excluded": [
+        "CYGEST 200SUPP",
+        "DILTIAZEM 5MG/ML INJ"
+      ],
+      "multi_pareto_drugs": 0
+    },
+    {
+      "fold": 2,
+      "split_date": "2026-09-02",
+      "holdout_end": "2026-09-16",
+      "drugs": 613,
+      "unseen_test_drugs_excluded": [
+        "BUDESONIDE 0,5 MG/ML CAIRAN INHALASI (SONIDE 0,5",
+        "CYCLO PROGYNOVA"
+      ],
+      "multi_pareto_drugs": 0
+    },
+    {
+      "fold": 3,
+      "split_date": "2026-09-16",
+      "holdout_end": "2026-09-30",
+      "drugs": 615,
+      "unseen_test_drugs_excluded": [
+        "CARBAMAZEPINE 200 MG TABLET (TEGRETOL"
+      ],
+      "multi_pareto_drugs": 0
+    }
+  ],
+  "horizon": 14,
+  "max_lstm_epochs": 20,
+  "threads": 4,
+  "lookback": 28,
+  "python": "3.11.9",
+  "torch": "2.5.1+cpu",
+  "xgboost": "3.2.0",
+  "numpy": "2.4.6",
+  "pandas": "2.3.1",
+  "features": [
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_7",
+    "lag_14",
+    "lag_21",
+    "rolling_mean_7",
+    "rolling_std_7",
+    "rolling_mean_14",
+    "rolling_max_14",
+    "rolling_mean_28",
+    "day_of_week",
+    "is_weekend",
+    "day_of_month",
+    "id_obat_encoded",
+    "kategori_pareto_encoded"
+  ],
+  "calendar": "day_of_week, is_weekend, day_of_month; no holiday/schedule",
+  "validation": "last 14 training days, one-step; refit full training",
+  "lstm": "per-category; hidden=32; embedding=8; batch=512; Adam lr=0.001; patience=4; per-drug mean scaling (training only)",
+  "caveats": [
+    "Zero-fill assumes missing transactions are genuine zero sales.",
+    "Source Pareto labels may contain future information; availability not verified.",
+    "Only one year; nearby folds do not validate annual seasonality.",
+    "Different architectures/preprocessing; no exhaustive hyperparameter search.",
+    "Row count is an exact multiple of 100,000; verify export was not truncated."
+  ],
+  "source": "data/raw/penjualan-10-2025.csv",
+  "source_sha256": "ddd2623e7ef284bedf0ee04a6d0c857426c7b7f7c75e5d38deab89f36043181a",
+  "raw_rows": 100000,
+  "start": "2025-10-01",
+  "end": "2026-09-30",
+  "raw_drugs": 590,
+  "cleaned_drugs": 616,
+  "empty_pareto_rows": 473,
+  "empty_pareto_drugs": 26
+}

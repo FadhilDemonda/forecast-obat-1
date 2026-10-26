@@ -7,9 +7,12 @@ import numpy as np
 import pandas as pd
 
 from .features import CONTEXT_COLS, FEATURES, build_features
+from .schedule import attach_schedule, require_schedule_dates
+from .calendar_features import CALENDAR_FEATURES, OPTIONAL_FEATURES
 
 
-def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict) -> pd.DataFrame:
+def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict, schedule=None,
+                       calendar_overrides=None) -> pd.DataFrame:
     """Prediksi `horizon` hari setelah tanggal terakhir di `daily`.
 
     Tiap hari diprediksi, lalu hasilnya dipakai sebagai lag/rolling hari berikutnya.
@@ -22,6 +25,11 @@ def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict) -
     hist = hist[keep].copy()
     meta = hist.drop_duplicates("id_obat")[["id_obat", "nama_obat", "kategori_pareto"]]
     last = hist["tanggal"].max()
+    feature_names = getattr(model, "feature_names_in_", FEATURES)
+    if any(c.startswith("skor_jadwal_") for c in feature_names):
+        if schedule is None:
+            raise ValueError("Model memakai skor jadwal; tabel jadwal wajib diberikan saat forecast.")
+        require_schedule_dates(schedule, pd.date_range(last + pd.Timedelta(days=1), periods=horizon))
     out = []
 
     # Spesialis/rawat untuk tanggal mendatang belum diketahui. Gunakan
@@ -41,9 +49,13 @@ def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict) -
             for col in CONTEXT_COLS:
                 future[col] = future["id_obat"].map(context_forecast[col]).fillna(0.0)
             hist = pd.concat([hist, future[keep]], ignore_index=True)
-        feat = build_features(hist, id_map)
+        feat = build_features(hist, id_map,
+                              include_calendar=bool(set(feature_names) & set(CALENDAR_FEATURES + OPTIONAL_FEATURES)),
+                              calendar_overrides=calendar_overrides)
         row = feat[feat["tanggal"] == day]
-        pred = np.clip(model.predict(row[FEATURES]), 0, None)
+        if schedule is not None:
+            row = attach_schedule(row, schedule)
+        pred = np.clip(model.predict(row[list(feature_names)]), 0, None)
         pred = np.where(pred < 0.01, 0.0, pred)
         pmap = dict(zip(row["id_obat"], pred))
         mask = hist["tanggal"] == day

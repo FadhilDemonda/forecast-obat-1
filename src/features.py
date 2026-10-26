@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import numpy as np
 import pandas as pd
+from .calendar_features import CALENDAR_FEATURES, build_calendar
 
 LAGS = [1, 2, 3, 7, 14, 21]
 PARETO_MAP = {"A": 2, "B": 1, "C": 0}
@@ -12,7 +13,7 @@ CONTEXT_COLS = [
     "ctx_qty_rawat_jalan", "ctx_qty_gawat_darurat", "ctx_qty_top_spesialis",
 ]
 
-FEATURES = (
+BASE_FEATURES = (
     [f"lag_{l}" for l in LAGS]
     + [
         "rolling_mean_7", "rolling_std_7",
@@ -24,13 +25,14 @@ FEATURES = (
     + [f"{c}_lag_7" for c in CONTEXT_COLS]
     + [f"{c}_rolling_mean_7" for c in CONTEXT_COLS]
 )
+FEATURES = BASE_FEATURES + CALENDAR_FEATURES
 
 
 def make_id_map(ids) -> dict:
     return {i: n for n, i in enumerate(sorted(set(ids)))}
 
 
-def build_features(df: pd.DataFrame, id_map: dict) -> pd.DataFrame:
+def build_features(df: pd.DataFrame, id_map: dict, include_calendar=True, calendar_overrides=None) -> pd.DataFrame:
     """df: kolom tanggal, id_obat, kategori_pareto, qty_keluar (boleh NaN di masa depan)."""
     df = df.sort_values(["id_obat", "tanggal"]).reset_index(drop=True).copy()
     for col in CONTEXT_COLS:
@@ -54,6 +56,10 @@ def build_features(df: pd.DataFrame, id_map: dict) -> pd.DataFrame:
     df["day_of_week"] = df["tanggal"].dt.dayofweek
     df["is_weekend"] = (df["day_of_week"] >= 5).astype(int)
     df["day_of_month"] = df["tanggal"].dt.day
+    if include_calendar:
+        calendar = build_calendar(df["tanggal"], calendar_overrides).set_index("tanggal")
+        for col in calendar:
+            df[col] = df["tanggal"].map(calendar[col])
 
     # Konteks klinis dibuat historis (lag/rolling), sehingga tidak memakai
     # jumlah spesialis/rawat aktual pada hari yang sedang diramalkan.

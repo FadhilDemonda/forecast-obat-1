@@ -10,8 +10,13 @@ import pandas as pd
 from xgboost import XGBRegressor
 
 from .data_loader import load_daily
-from .features import FEATURES, build_features, make_id_map
+from .features import BASE_FEATURES, FEATURES, build_features, make_id_map
+from .calendar_features import OPTIONAL_FEATURES, build_calendar, load_calendar_overrides
 from .forecast import baseline_forecast, recursive_forecast
+from .schedule import (DEFAULT_SCHEDULE_CSV, DEFAULT_DOCTOR_PARETO_CSV,
+                       DEFAULT_DOCTOR_FORECAST_CSV, attach_schedule, load_schedule,
+                       require_schedule_dates, schedule_columns, build_doctor_schedule,
+                       combine_forecast_schedule)
 
 TEST_DAYS = 14
 MIN_TREES = 150  # validasi early-stopping kecil & berisik -> jangan biarkan model terlalu dangkal
@@ -59,28 +64,55 @@ def make_model(objective: str, n_estimators=600, early_stopping_rounds=None) -> 
     return XGBRegressor(**params)
 
 
-def fit_with_early_stopping(train: pd.DataFrame, objective: str) -> int:
+def fit_with_early_stopping(train: pd.DataFrame, objective: str, features=None) -> int:
     """Cari jumlah pohon optimal memakai 14 hari terakhir dari TRAIN (test tidak disentuh)."""
+    features = FEATURES if features is None else features
     cut = train["tanggal"].max() - pd.Timedelta(days=TEST_DAYS)
     tr, va = train[train["tanggal"] <= cut], train[train["tanggal"] > cut]
     if len(tr) < 30 or len(va) == 0:
         return max(200, MIN_TREES)
     m = make_model(objective, early_stopping_rounds=30)
-    m.fit(tr[FEATURES], tr["qty_keluar"], eval_set=[(va[FEATURES], va["qty_keluar"])], verbose=False)
+    m.fit(tr[features], tr["qty_keluar"], eval_set=[(va[features], va["qty_keluar"])], verbose=False)
     best = int(getattr(m, "best_iteration", m.n_estimators - 1)) + 1
     return max(best, MIN_TREES)
 
 
-def run_pipeline(daily: pd.DataFrame, horizon: int = 14) -> dict:
+def run_pipeline(daily: pd.DataFrame, horizon: int = 14, schedule=DEFAULT_SCHEDULE_CSV,
+                 doctor_pareto=None, doctor_practice=None, include_calendar=False,
+                 calendar_overrides=None) -> dict:
     """Training model terpisah per kategori Pareto (Rule 3.3) + evaluasi + forecast."""
     horizon = int(np.clip(horizon, 1, 28))
+    calendar_overrides = load_calendar_overrides(calendar_overrides)
+    if include_calendar:
+        # Validasi cakupan sebelum melatih: terutama kalender operasional opsional.
+        calendar_table = build_calendar(pd.date_range(daily.tanggal.min(),
+            daily.tanggal.max() + pd.Timedelta(days=horizon)), calendar_overrides)
+    else:
+        calendar_table = None
+    schedule = load_schedule(schedule) if schedule is not None else None
+    doctor_master = doctor_roster = None
+    if (doctor_pareto is None) != (doctor_practice is None):
+        raise ValueError("Master Pareto dan jadwal dokter harus diberikan bersama.")
+    if doctor_pareto is not None:
+        if schedule is None:
+            raise ValueError("Skor historis wajib tersedia untuk jadwal dokter forecast.")
+        doctor_master, doctor_roster, scores = build_doctor_schedule(doctor_pareto, doctor_practice)
+        schedule = combine_forecast_schedule(schedule, scores, daily["tanggal"].max())
+    if schedule is not None:
+        require_schedule_dates(schedule, pd.date_range(
+            daily["tanggal"].min(), daily["tanggal"].max() + pd.Timedelta(days=horizon)
+        ))
+        daily = attach_schedule(daily, schedule)
+    features = (FEATURES if include_calendar else BASE_FEATURES) + schedule_columns(daily)
+    if include_calendar:
+        features += [c for c in OPTIONAL_FEATURES if c in calendar_table]
     id_map = make_id_map(daily["id_obat"])
 
     max_date = daily["tanggal"].max()
     split = max_date - pd.Timedelta(days=TEST_DAYS)
 
     # --- Rule 5.1: time-based split
-    feat = build_features(daily, id_map)
+    feat = build_features(daily, id_map, include_calendar, calendar_overrides)
     train = feat[(feat["tanggal"] <= split) & feat["lag_1"].notna()]
     test = feat[feat["tanggal"] > split].copy()
     train_daily = daily[daily["tanggal"] <= split]
@@ -99,29 +131,31 @@ def run_pipeline(daily: pd.DataFrame, horizon: int = 14) -> dict:
         full_tr_cat = full_train[full_train["kategori_pareto"] == cat]
 
         obj = pick_objective_for_category(cat)
-        n_trees = fit_with_early_stopping(tr_cat, obj)
+        n_trees = fit_with_early_stopping(tr_cat, obj, features)
         objectives[cat] = obj
         n_trees_dict[cat] = n_trees
 
         # Evaluasi model (train & evaluasi di holdout)
         eval_m = make_model(obj, n_estimators=n_trees)
-        eval_m.fit(tr_cat[FEATURES], tr_cat["qty_keluar"], verbose=False)
+        eval_m.fit(tr_cat[features], tr_cat["qty_keluar"], verbose=False)
         eval_models[cat] = eval_m
 
-        pred = np.clip(eval_m.predict(te_cat[FEATURES]), 0, None)
+        pred = np.clip(eval_m.predict(te_cat[features]), 0, None)
         te_cat["pred_xgb"] = np.where(pred < 0.01, 0.0, pred)
         te_cat["pred_sma7"] = te_cat["rolling_mean_7"].fillna(0)
         test_cat_list.append(te_cat)
 
-        rec_c = recursive_forecast(eval_m, tr_daily_cat, TEST_DAYS, id_map)
+        rec_c = recursive_forecast(eval_m, tr_daily_cat, TEST_DAYS, id_map, schedule=schedule,
+                                   calendar_overrides=calendar_overrides)
         rec_cat_list.append(rec_c)
 
         # Model final: latih ulang di SELURUH data kategori tersebut
         final_m = make_model(obj, n_estimators=n_trees)
-        final_m.fit(full_tr_cat[FEATURES], full_tr_cat["qty_keluar"], verbose=False)
+        final_m.fit(full_tr_cat[features], full_tr_cat["qty_keluar"], verbose=False)
         final_models[cat] = final_m
 
-        fc_c = recursive_forecast(final_m, daily_cat, horizon, id_map)
+        fc_c = recursive_forecast(final_m, daily_cat, horizon, id_map, schedule=schedule,
+                                  calendar_overrides=calendar_overrides)
         fc_cat_list.append(fc_c)
 
     test_all = pd.concat(test_cat_list, ignore_index=True)
@@ -154,6 +188,9 @@ def run_pipeline(daily: pd.DataFrame, horizon: int = 14) -> dict:
         metrics_recursive=recursive, metrics_onestep=onestep,
         holdout=cmp_, test_features=test_all, train_features=train,
         forecast=forecast_all, split_date=split, max_date=max_date,
+        features=features, schedule=schedule,
+        doctor_master=doctor_master, doctor_roster=doctor_roster,
+        calendar=calendar_table, calendar_overrides=calendar_overrides,
     )
 
 
@@ -164,7 +201,9 @@ def save_model(res: dict, path="models/xgb_forecaster.joblib"):
         "id_map": res["id_map"],
         "objectives": res["objectives"],
         "n_trees": res["n_trees_dict"],
-        "features": FEATURES,
+        "features": res.get("features", FEATURES),
+        "schedule": res.get("schedule"),
+        "calendar_overrides": res.get("calendar_overrides"),
     }, path)
 
 
@@ -184,13 +223,32 @@ def _print(res, daily=None):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv", default="data/raw/groubynama.csv")
+    ap.add_argument("--csv", default="data/raw/groubynama+spesialis+dokter.csv")
+    ap.add_argument("--schedule", default=DEFAULT_SCHEDULE_CSV)
+    ap.add_argument("--without-schedule", action="store_true", help="Pembanding tanpa skor jadwal")
+    ap.add_argument("--doctor-pareto", default=DEFAULT_DOCTOR_PARETO_CSV)
+    ap.add_argument("--doctor-practice", default=DEFAULT_DOCTOR_FORECAST_CSV)
+    ap.add_argument("--without-doctor-forecast", action="store_true")
+    calendar_flags = ap.add_mutually_exclusive_group()
+    calendar_flags.add_argument("--with-calendar", dest="include_calendar", action="store_true",
+                                help="Aktifkan fitur tambahan libur/Ramadan (eksperimen)")
+    calendar_flags.add_argument("--without-calendar", dest="include_calendar", action="store_false",
+                                help="Tanpa fitur tambahan libur/Ramadan (default)")
+    ap.set_defaults(include_calendar=False)
+    ap.add_argument("--calendar-overrides", help="CSV koreksi kalender dan/atau tutup klinik")
     ap.add_argument("--horizon", type=int, default=14)
     a = ap.parse_args()
     daily = load_daily(a.csv)
     os.makedirs("data/processed", exist_ok=True)
     daily.to_csv("data/processed/daily_zero_filled.csv", index=False)
-    res = run_pipeline(daily, a.horizon)
+    use_doctors = not (a.without_schedule or a.without_doctor_forecast)
+    res = run_pipeline(daily, a.horizon, schedule=None if a.without_schedule else a.schedule,
+                       doctor_pareto=a.doctor_pareto if use_doctors else None,
+                       doctor_practice=a.doctor_practice if use_doctors else None,
+                       include_calendar=a.include_calendar, calendar_overrides=a.calendar_overrides)
+    if res["doctor_master"] is not None:
+        res["doctor_master"].to_csv("data/processed/master_dokter_id.csv", index=False)
+        res["doctor_roster"].to_csv("data/processed/jadwal_dokter_id.csv", index=False)
     _print(res, daily)
     save_model(res)
     res["forecast"].to_csv("data/processed/forecast.csv", index=False)

@@ -1,5 +1,225 @@
 # 💊 Drug Forecasting XGBoost
 
+## Benchmark jendela training 90/120/180 hari
+
+```bash
+python -m src.benchmark_windows --windows 90 120 180 --folds 2
+```
+
+Benchmark ini menggunakan **dataset dashboard default**
+`data/raw/groubynama+spesialis+dokter.csv`, bukan file satu tahun pada benchmark
+LSTM di bawah. Skor jadwal historis tetap dipakai; fitur libur tambahan tidak
+dipakai. Hanya jumlah hari training yang berubah. Tuning memakai 14 hari akhir
+training masing-masing varian; prediksi holdout recursive 14 hari. Histori
+pemanasan maksimal 28 hari tidak ikut training, tetapi dipakai menghitung fitur.
+
+Pada histori 214 hari, dua holdout yang sama dapat diuji: 3–16 September dan
+17–30 September 2026. Training 180 hari hanya mempunyai pemanasan 6/20 hari;
+training 90/120 hari mempunyai 28 hari. Sebagian fitur awal varian 180 hari
+berbasis histori parsial atau kosong. Jadi perbandingan ini bersifat eksploratif,
+belum benchmark dengan pemanasan penuh yang setara. Lebih banyak histori perlu
+untuk beberapa fold dengan pemanasan lengkap.
+
+Keluaran: `data/processed/window_benchmark.csv` (per fold, termasuk batas training
+dan panjang warmup) dan `data/processed/window_benchmark_summary.csv` (WAPE pooled,
+rasio total error absolut terhadap total aktual, bukan rata-rata WAPE fold).
+Label Pareto dan universe obat mengikuti loader dashboard; belum dibekukan ulang
+per cutoff. Keterbatasan ini sama untuk seluruh varian. Memilih jendela berdasarkan
+holdout ini memerlukan validasi lanjutan pada periode baru. Benchmark tidak
+mengganti default dashboard, model tersimpan, atau forecast aktif.
+
+## Benchmark XGBoost vs LSTM: data penjualan satu tahun
+
+Benchmark terpisah memakai `data/raw/penjualan-10-2025.csv`, tanpa mengubah model
+dashboard, `models/xgb_forecaster.joblib`, atau `data/processed/forecast.csv`.
+
+```bash
+python -m pip install -r requirements-benchmark.txt
+python -m src.benchmark_models --folds 3 --horizon 14 --epochs 20
+python -m unittest discover -s tests -v
+```
+
+Jika pemasangan PyTorch pada Windows bermasalah, gunakan wheel CPU:
+`python -m pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu`.
+
+Protokol perbandingan:
+
+* Tiga holdout berurutan, masing-masing 14 hari, expanding training window.
+  Semua prediksi recursive: aktual holdout tidak diumpankan kembali ke model.
+* Obat, label Pareto dominan menurut volume, dan lookup ditetapkan dari data
+  training setiap fold; obat yang baru muncul pada test dikecualikan dan dicatat.
+  Label A/B/C bawaan tidak dihitung ulang. Asal waktu label sumber tetap perlu diverifikasi.
+* Model terpisah per A/B/C; XGBoost memakai konfigurasi proyek tanpa jadwal,
+  konteks klinis, atau tambahan libur. Kalender dasar tersedia bagi kedua model.
+  XGBoost memakai lag/rolling maksimal 28 hari; LSTM memakai sequence 28 hari,
+  embedding obat, kalender historis dan kalender hari target.
+* Warmup 28 hari sama. Pemilihan jumlah pohon/epoch memakai 14 hari terakhir
+  **training**, evaluasi one-step, kemudian refit seluruh training. Test tidak
+  digunakan memilih konfigurasi. Validasi ini bukan optimasi recursive loss.
+* LSTM: hidden size 32, embedding 8, Adam 0.001, batch 512, maksimal 20 epoch,
+  patience 4, seed 42. Kuantitas dibagi rata-rata per obat dari training saja
+  (minimal skala 1). Loss MSE untuk A dan Tweedie p=1.5 untuk B/C; normalisasi
+  LSTM membuat bobot relatif antarobat berbeda dari XGBoost. Ini perbandingan
+  pipeline praktis, bukan eksperimen arsitektur dengan loss identik.
+* Baseline SMA-7 tetap datar sepanjang horizon. MAE, RMSE, WAPE dihitung Overall
+  dan A/B/C. Ringkasan pooled memakai seluruh prediksi, bukan rata-rata WAPE fold.
+  Satu seed dan konfigurasi kecil belum mewakili seluruh potensi LSTM/XGBoost.
+
+Keluaran di `data/processed/benchmark_xgb_lstm/`: `metrics_folds.csv`,
+`metrics_pooled.csv`, `predictions.csv`, `training.csv`, dan `metadata.json`
+(konfigurasi, versi pustaka, hash sumber, obat yang dikecualikan, batasan).
+
+**Validasi sumber:** file mencakup 1 Oktober 2025–30 September 2026, tepat
+100.000 baris dan 590 ID mentah terisi. Ada 473 baris tanpa ID/Pareto (26 nama
+obat); loader memakai nama sebagai ID dan mengisi kategori C. Total menjadi
+616 obat setelah normalisasi pada file ini. Akhir file berada pada Januari 2026 untuk obat
+terakhir; ini indikasi kemungkinan ekspor terpotong, bukan bukti pasti. Konfirmasi
+ekspor lengkap sebelum memakai hasil untuk keputusan stok. Zero-fill berasumsi
+tanggal tanpa transaksi berarti nol, bukan transaksi yang hilang. Nama supplier
+dengan kurung tidak ditutup dipertahankan oleh loader lama; jumlah obat hasil
+normalisasi dicatat terpisah. Tiga fold berdekatan dan satu tahun histori tidak
+membuktikan generalisasi musiman tahunan.
+
+### Hasil benchmark penjualan satu tahun
+
+Hasil pooled tiga holdout recursive (20 Agustus–30 September 2026), seed 42:
+
+| Model | MAE Overall | RMSE Overall | WAPE Overall | WAPE A | WAPE B | WAPE C |
+|---|---:|---:|---:|---:|---:|---:|
+| XGBoost | 36.63 | 140.86 | 57.75% | 51.61% | 53.04% | 72.59% |
+| LSTM | 39.06 | 143.55 | 61.57% | 52.23% | 59.62% | 77.36% |
+| Baseline SMA-7 | 40.95 | 156.28 | 64.55% | 57.95% | 62.55% | 76.50% |
+
+| Periode holdout | XGBoost WAPE | LSTM WAPE | SMA-7 WAPE |
+|---|---:|---:|---:|
+| 20 Agustus–2 September 2026 | 54.99% | 62.01% | 63.86% |
+| 3–16 September 2026 | 60.29% | 62.33% | 65.16% |
+| 17–30 September 2026 | 58.02% | 60.49% | 64.64% |
+
+XGBoost unggul pada WAPE Overall di ketiga fold dan pada WAPE pooled tiap
+kategori. LSTM tidak selalu kalah pada setiap metrik/subset: RMSE Overall fold
+2/3 dan WAPE A fold 2/3 lebih rendah. WAPE pooled LSTM kategori C bahkan lebih
+tinggi daripada SMA-7. Belum ada model yang mencapai WAPE 15%; hasil masih
+sementara karena kelengkapan ekspor belum terverifikasi. Angka ini tidak
+sebanding langsung dengan benchmark lama yang memakai dataset dan fitur berbeda.
+
+## Default data dan skor jadwal spesialis
+
+### Fitur kalender Indonesia
+
+Fitur tambahan **nonaktif secara default** (opsional): `is_public_holiday`, `is_collective_leave`,
+`days_until_holiday`, `days_since_holiday`, dan `is_ramadan`. Fitur lama
+`day_of_week`, `is_weekend`, dan `day_of_month` tetap tersedia. Tidak menambah
+fitur musiman tahunan atau lag lebih dari 28 hari. Jarak dihitung terhadap libur
+nasional/cuti bersama, termasuk hari libur itu sendiri (jarak 0), dibatasi 28 hari.
+
+Sumber kalender: `holidays==0.107`, Indonesia kategori PUBLIC dan GOVERNMENT.
+Ramadan adalah **estimasi Umm al-Qura** dari `hijridate==2.6.0`, bukan keputusan
+sidang isbat Indonesia. Kalender pustaka bukan arsip informasi yang tersedia
+pada setiap tanggal forecast historis; hasil backtest harus ditafsirkan dengan
+batasan ini. Koreksi sesuai keputusan resmi dapat diunggah melalui sidebar atau
+CLI. Semua fitur tersedia pada training, recursive forecast, dan SHAP.
+
+CSV koreksi opsional (flag 0/1; sel kosong mempertahankan default):
+
+```csv
+tanggal,is_public_holiday,is_collective_leave,is_ramadan
+2026-03-01,,,1
+```
+
+Kolom opsional `is_clinic_closed` hanya ditambahkan jika disuplai; harus lengkap
+untuk **seluruh tanggal training, holdout, dan horizon forecast**. Tidak ada
+asumsi bahwa libur nasional berarti RS/klinik tutup. Jika status berbeda antar
+klinik, jangan memakai satu flag global tanpa agregasi operasional yang jelas.
+Unduhan kalender efektif tersedia di dashboard; konten upload ikut kunci cache.
+
+```bash
+python -m pip install -r requirements.txt
+python -m src.train_xgb
+python -m src.train_xgb --with-calendar
+python -m src.train_xgb --without-calendar
+python -m src.train_xgb --with-calendar --calendar-overrides data/raw/kalender_rs.csv
+python -m src.benchmark_calendar --folds 3
+```
+
+Benchmark memakai data obat, fitur lain, split temporal dan konfigurasi model
+yang sama, dengan tuning early stopping yang sama untuk masing-masing varian.
+Tidak mengubah model/forecast aktif. Hasil WAPE recursive Overall:
+
+| Akhir holdout 14 hari | Tanpa tambahan kalender | Dengan tambahan kalender |
+|---|---:|---:|
+| 2026-09-02 | 32.49% | 31.74% |
+| 2026-09-16 | 28.01% | 28.13% |
+| 2026-09-30 | 28.66% | 29.07% |
+
+Kalender belum menunjukkan peningkatan konsisten dan belum mencapai 15%.
+Holdout terakhir memburuk sedikit. Tabel hasil lengkap disimpan di
+`data/processed/calendar_benchmark.csv`. Tiga fold ini masih mencakup periode
+berdekatan, bukan validasi seluruh musim. Feature importance tidak membuktikan
+peningkatan akurasi; gunakan ablation dan lebih banyak periode sebelum memilih
+konfigurasi produksi. Checkbox kalender default mati; aktifkan untuk eksperimen.
+`day_of_week`, `is_weekend`, `day_of_month`, dan skor jadwal dokter tetap aktif.
+
+### Jadwal per dokter untuk forecast
+
+Streamlit dan CLI kini secara default membaca `data/raw/kategoriparetodokter.csv`
+dan `data/raw/jadwalpraktekdokterforecast.csv`. Pasangan nama tersensor dan
+spesialis dinormalisasi, lalu diberi ID deterministik berbasis SHA-256. ID tetap
+sama meskipun urutan baris berubah; perubahan nama atau spesialis menghasilkan ID
+berbeda. ID ini bukan verifikasi identitas asli dan tidak dipakai sebagai fitur numerik.
+
+Kategori dokter A/B/C dibobot 3/2/1 dan dijumlahkan per tanggal/spesialis. Skor ini
+hanya mengganti jadwal **setelah tanggal penjualan terakhir**. Training dan holdout
+tetap memakai skor historis, sehingga WAPE holdout tidak berubah. Belum ada fitur
+jumlah dokter A/B/C karena histori terperinci belum tersedia.
+
+Roster diasumsikan lengkap untuk setiap tanggal tercantum: spesialis tanpa baris
+pada tanggal tersebut dihitung nol. Tanggal yang sama sekali tidak tercantum tidak
+dianggap nol dan tidak diganti diam-diam dengan skor lama. Spesialis baru yang tidak
+ada dalam skema training ditolak. Periksa kelengkapan roster sebelum forecast.
+Tanggal 30 September 2026 yang tidak tercantum pada roster tetap memakai skor
+historis karena termasuk periode aktual. Roster default mencakup forecast 1–14
+Oktober 2026. Jadwal dan Pareto dokter harus sudah diketahui sebelum forecast dibuat.
+
+CLI menulis `data/processed/master_dokter_id.csv` dan
+`data/processed/jadwal_dokter_id.csv`; Streamlit menyediakan unduhan keduanya.
+Upload kedua sumber pengganti tersedia di sidebar. Nonaktifkan checkbox jadwal
+dokter atau gunakan `--without-doctor-forecast` untuk memakai skor jadwal lama saja.
+
+Streamlit dan CLI memakai `data/raw/groubynama+spesialis+dokter.csv` sebagai
+data penjualan default, serta `data/raw/skorspesialis2025.csv` sebagai jadwal.
+Skor per spesialis (bobot dokter A/B/C = 3/2/1) dan `total_skor` digabung
+berdasarkan tanggal tanpa menggandakan kuantitas. Kolom model memakai awalan
+`skor_jadwal_`, termasuk pada SHAP. Skor hari prediksi dipakai langsung karena
+jadwal diasumsikan sudah diketahui sebelum forecast, bukan berasal dari transaksi
+hari tersebut. Kolom spesialis yang tidak ada tidak dibuat menjadi skor nol.
+
+Jadwal harus mencakup seluruh tanggal training, holdout, dan horizon forecast.
+Tanggal hilang, tanggal duplikat, skor negatif/kosong, serta total yang tidak
+sesuai akan ditolak. Streamlit menyediakan upload jadwal pengganti dan menampilkan
+rentang tanggalnya. Perubahan isi jadwal ikut membatalkan cache hasil training.
+
+```bash
+python -m src.train_xgb
+python -m src.train_xgb --schedule data/raw/skorspesialis2025.csv
+python -m src.train_xgb --without-schedule
+```
+
+Perbandingan satu holdout recursive 14 hari pada file penjualan yang sama
+(187 obat, split 2026-09-16):
+
+| Kategori | Tanpa skor jadwal, WAPE (%) | Dengan skor jadwal, WAPE (%) |
+|---|---:|---:|
+| Overall | 33.88 | 28.66 |
+| A | 31.37 | 25.74 |
+| B | 31.72 | 25.01 |
+| C | 47.39 | 46.88 |
+
+Hasil ini belum merupakan rolling backtest. Validitasnya bergantung pada jadwal
+dan kategori Pareto dokter yang memang tersedia pada tanggal asal forecast.
+Kategori dokter berdasarkan kunjungan masa depan akan menyebabkan leakage.
+Menjalankan CLI menyimpan ulang artefak model dan CSV keluaran sesuai dataset aktif.
+
 Sistem peramalan (*forecasting*) kebutuhan pengeluaran obat harian berbasis **Machine Learning (XGBoost)** yang dirancang khusus untuk manajemen rantai pasok dan farmasi rumah sakit. 
 
 Sistem ini menerapkan prinsip segmentasi Pareto (ABC), penanganan data terputus (*zero-filling*), penggabungan otomatis varian antar-supplier, serta pelatihan model terpisah per kategori untuk menghasilkan akurasi optimal pada pola obat *fast-moving* maupun *slow-moving / intermittent*.

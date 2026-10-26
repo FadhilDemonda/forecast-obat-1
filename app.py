@@ -1,5 +1,6 @@
 """Dashboard Streamlit: forecasting pengeluaran obat harian (XGBoost)."""
 import hashlib
+import io
 import os
 
 import matplotlib.pyplot as plt
@@ -11,6 +12,8 @@ from src.data_loader import group_mapping, load_daily
 from src.explain import feature_impact
 from src.evaluation import context_correlations, wape_matrix
 from src.train_xgb import run_pipeline, save_model
+from src.schedule import (DEFAULT_SCHEDULE_CSV, DEFAULT_DOCTOR_PARETO_CSV,
+                          DEFAULT_DOCTOR_FORECAST_CSV, load_schedule)
 
 # ---------------------------------------------------------------- dark theme for plots
 plt.style.use("dark_background")
@@ -77,7 +80,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-CACHE_VERSION = "v7_clinical_context_heatmap"
+CACHE_VERSION = "v11_calendar_opt_in"
 
 
 @st.cache_data(show_spinner="Membersihkan data & zero-filling...")
@@ -87,8 +90,14 @@ def get_daily(file_bytes: bytes, version: str = CACHE_VERSION) -> pd.DataFrame:
 
 
 @st.cache_resource(show_spinner="Melatih XGBoost per kategori & menghitung forecast...")
-def get_results(key: str, daily: pd.DataFrame, horizon: int, version: str = CACHE_VERSION):
-    res = run_pipeline(daily, horizon)
+def get_results(key: str, daily: pd.DataFrame, horizon: int, schedule_bytes: bytes,
+                doctor_pareto_bytes=None, doctor_practice_bytes=None, include_calendar=False,
+                calendar_bytes=None, version: str = CACHE_VERSION):
+    res = run_pipeline(daily, horizon, schedule=io.BytesIO(schedule_bytes),
+                       doctor_pareto=io.BytesIO(doctor_pareto_bytes) if doctor_pareto_bytes is not None else None,
+                       doctor_practice=io.BytesIO(doctor_practice_bytes) if doctor_practice_bytes is not None else None,
+                       include_calendar=include_calendar,
+                       calendar_overrides=io.BytesIO(calendar_bytes) if calendar_bytes is not None else None)
     save_model(res)
     return res
 
@@ -125,6 +134,15 @@ st.title("💊 Forecast Pengeluaran Obat Harian (XGBoost)")
 with st.sidebar:
     st.header("Pengaturan")
     up = st.file_uploader("Upload CSV (kolom: tanggal, ID obat, qty, kategori ABC)", type="csv")
+    schedule_up = st.file_uploader("Upload skor jadwal spesialis (opsional, mengganti default)", type="csv")
+    use_doctor_forecast = st.checkbox("Pakai jadwal per dokter untuk forecast", value=True)
+    doctor_pareto_up = st.file_uploader("Master Pareto dokter (opsional, mengganti default)", type="csv")
+    doctor_practice_up = st.file_uploader("Jadwal per dokter (opsional, mengganti default)", type="csv")
+    include_calendar = st.checkbox("Pakai fitur libur dan Ramadan", value=False,
+                                   key="include_calendar_opt_in")
+    calendar_up = st.file_uploader("Koreksi kalender / tutup klinik (opsional)", type="csv")
+    st.caption("Libur nasional/cuti bersama dari holidays. Ramadan estimasi Umm al-Qura; "
+               "unggah koreksi sesuai keputusan Indonesia. Libur tidak berarti RS tutup.")
     horizon = st.slider("Horizon forecast (hari)", 7, 14, 14)
     if st.button("🔄 Reset Cache & Latih Ulang"):
         st.cache_data.clear()
@@ -160,8 +178,56 @@ n_days = daily["tanggal"].nunique()
 if n_days < 45:
     st.warning(f"Data hanya {n_days} hari; hasil model kemungkinan kurang andal (disarankan ≥ 45 hari).")
 
-key = hashlib.md5(data_bytes).hexdigest()
-res = get_results(key, daily, horizon, version=CACHE_VERSION)
+try:
+    if schedule_up is not None:
+        schedule_bytes = schedule_up.getvalue()
+    else:
+        with open(DEFAULT_SCHEDULE_CSV, "rb") as schedule_file:
+            schedule_bytes = schedule_file.read()
+        st.sidebar.caption(f"Jadwal default: `{DEFAULT_SCHEDULE_CSV}`")
+    schedule_table = load_schedule(io.BytesIO(schedule_bytes))
+    st.sidebar.caption(f"Cakupan jadwal: {schedule_table['tanggal'].min().date()} s/d "
+                       f"{schedule_table['tanggal'].max().date()}")
+    key = hashlib.md5(data_bytes).hexdigest()
+    doctor_pareto_bytes = doctor_practice_bytes = None
+    if use_doctor_forecast:
+        if doctor_pareto_up is not None:
+            doctor_pareto_bytes = doctor_pareto_up.getvalue()
+        else:
+            with open(DEFAULT_DOCTOR_PARETO_CSV, "rb") as f:
+                doctor_pareto_bytes = f.read()
+        if doctor_practice_up is not None:
+            doctor_practice_bytes = doctor_practice_up.getvalue()
+        else:
+            with open(DEFAULT_DOCTOR_FORECAST_CSV, "rb") as f:
+                doctor_practice_bytes = f.read()
+    res = get_results(key, daily, horizon, schedule_bytes, doctor_pareto_bytes,
+                      doctor_practice_bytes, include_calendar,
+                      calendar_up.getvalue() if calendar_up is not None else None, version=CACHE_VERSION)
+except (ValueError, OSError) as e:
+    st.error(f"Gagal menyiapkan training/forecast: {e}")
+    st.stop()
+
+if res.get("calendar") is not None:
+    with st.expander("Kalender yang dipakai model"):
+        st.caption("Jarak libur dihitung terhadap libur nasional atau cuti bersama, maksimal 28 hari. "
+                   "is_clinic_closed hanya digunakan jika diunggah dan seluruh tanggal tercakup. "
+                   "Kalender pustaka bukan arsip versi keputusan yang tersedia pada tanggal forecast lama.")
+        st.dataframe(res["calendar"], hide_index=True, use_container_width=True)
+        st.download_button("Download kalender model", res["calendar"].to_csv(index=False).encode("utf-8"),
+                           "kalender_model.csv", "text/csv")
+
+if res.get("doctor_master") is not None:
+    st.sidebar.caption("Forecast memakai skor dari jadwal dokter A/B/C. Training dan holdout tetap memakai skor historis.")
+    with st.expander("ID dokter dan jadwal forecast"):
+        st.warning("ID berasal dari pasangan nama tersensor + spesialis, bukan identitas terverifikasi. "
+                   "Roster dianggap lengkap pada setiap tanggal tercantum: spesialis tanpa baris dihitung nol. "
+                   "Tanggal tanpa baris tetap dianggap belum tersedia. Periksa kelengkapan roster sebelum dipakai.")
+        st.dataframe(res["doctor_master"], hide_index=True, use_container_width=True)
+        st.download_button("Download master ID dokter", res["doctor_master"].to_csv(index=False).encode("utf-8"),
+                           "master_dokter_id.csv", "text/csv")
+        st.download_button("Download jadwal dengan ID", res["doctor_roster"].to_csv(index=False).encode("utf-8"),
+                           "jadwal_dokter_id.csv", "text/csv")
 
 cats = sorted(daily["kategori_pareto"].unique())
 with st.sidebar:
@@ -218,6 +284,9 @@ with tab1:
 
 # ---------------------------------------------------------------- Evaluasi
 with tab2:
+    st.caption("Skor jadwal spesialis aktif pada training dan forecast. Evaluasi mengasumsikan jadwal "
+               "serta Pareto dokter sudah diketahui sebelum forecast dibuat. Pareto yang dihitung "
+               "dari kunjungan masa depan dapat menyebabkan kebocoran data.")
     st.caption(f"Time-based split: train s/d {res['split_date'].date()}, uji = 14 hari terakhir. "
                "Model dilatih mandiri per kategori Pareto (A: squarederror, B/C: tweedie).")
     st.subheader("Recursive 14 hari (kondisi nyata forecasting)")

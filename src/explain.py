@@ -6,7 +6,8 @@ from .features import FEATURES
 
 
 def feature_impact(model, X: pd.DataFrame) -> pd.DataFrame:
-    X = X[FEATURES]
+    features = list(getattr(model, "feature_names_in_", FEATURES))
+    X = X[features]
     try:
         import shap
         sv = shap.TreeExplainer(model).shap_values(X)
@@ -15,6 +16,6 @@ def feature_impact(model, X: pd.DataFrame) -> pd.DataFrame:
     except Exception:
         imp = np.asarray(model.feature_importances_, float)
         src = "XGBoost feature importance (gain)"
-    out = pd.DataFrame({"fitur": FEATURES, "dampak": imp}).sort_values("dampak", ascending=False)
+    out = pd.DataFrame({"fitur": features, "dampak": imp}).sort_values("dampak", ascending=False)
     out.attrs["source"] = src
     return out.reset_index(drop=True)
