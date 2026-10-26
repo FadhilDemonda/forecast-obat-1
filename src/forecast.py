@@ -6,7 +6,7 @@ import warnings
 import numpy as np
 import pandas as pd
 
-from .features import FEATURES, build_features
+from .features import CONTEXT_COLS, FEATURES, build_features
 
 
 def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict) -> pd.DataFrame:
@@ -14,18 +14,33 @@ def recursive_forecast(model, daily: pd.DataFrame, horizon: int, id_map: dict) -
 
     Tiap hari diprediksi, lalu hasilnya dipakai sebagai lag/rolling hari berikutnya.
     """
-    hist = daily[["tanggal", "id_obat", "nama_obat", "kategori_pareto", "qty_keluar"]].copy()
+    keep = ["tanggal", "id_obat", "nama_obat", "kategori_pareto", "qty_keluar"] + CONTEXT_COLS
+    hist = daily.copy()
+    for col in CONTEXT_COLS:
+        if col not in hist.columns:
+            hist[col] = 0.0
+    hist = hist[keep].copy()
     meta = hist.drop_duplicates("id_obat")[["id_obat", "nama_obat", "kategori_pareto"]]
     last = hist["tanggal"].max()
     out = []
+
+    # Spesialis/rawat untuk tanggal mendatang belum diketahui. Gunakan
+    # estimasi naive berupa rata-rata tujuh hari terakhir per obat agar fitur
+    # konteks tidak tiba-tiba berubah menjadi nol pada hari forecast.
+    recent = hist[hist["tanggal"] > last - pd.Timedelta(days=7)]
+    context_forecast = {
+        col: recent.groupby("id_obat")[col].mean()
+        for col in CONTEXT_COLS
+    }
 
     for d in range(1, horizon + 1):
         day = last + pd.Timedelta(days=d)
         with warnings.catch_warnings():  # kolom qty baris baru sengaja NaN (diisi prediksi)
             warnings.simplefilter("ignore", FutureWarning)
-            hist = pd.concat(
-                [hist, meta.assign(tanggal=day, qty_keluar=np.nan)], ignore_index=True
-            )
+            future = meta.assign(tanggal=day, qty_keluar=np.nan)
+            for col in CONTEXT_COLS:
+                future[col] = future["id_obat"].map(context_forecast[col]).fillna(0.0)
+            hist = pd.concat([hist, future[keep]], ignore_index=True)
         feat = build_features(hist, id_map)
         row = feat[feat["tanggal"] == day]
         pred = np.clip(model.predict(row[FEATURES]), 0, None)

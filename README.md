@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ### 2. Pelatihan & Evaluasi Model via CLI
 Jalankan pipeline penuh (sanitasi, zero-filling, training per kategori, evaluasi 14 hari, dan recursive forecast):
 ```bash
-python -m src.train_xgb --csv data/raw/test1.csv --horizon 14
+python -m src.train_xgb --csv data/raw/groubynama.csv --horizon 14
 ```
 Hasil model akan disimpan di `models/xgb_forecaster.joblib` dan data forecast di `data/processed/forecast.csv`.
 
@@ -74,18 +74,20 @@ Model **tidak dicampur menjadi satu**, melainkan dilatih secara mandiri untuk ma
 
 ---
 
-## 📊 Hasil Evaluasi Terkini (Dataset 214 Hari)
+## 📊 Hasil Evaluasi Terkini (Dataset 214 Hari - `groubynama.csv`)
 
-Dengan pemisahan model per kategori dan penggabungan varian supplier, XGBoost mengungguli Baseline SMA-7 di semua kategori:
+Dengan pemisahan model per kategori dan penggabungan varian supplier, XGBoost konsisten mengungguli Baseline SMA-7 di seluruh kategori (A, B, C):
 
 | Model | Kategori | Objective | MAE | RMSE | WAPE (%) |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **XGBoost (Per Kat)** | **Overall** | **Campuran** | **111.04** | **244.30** | **37.13%** |
-| **XGBoost (Per Kat)** | **A** | `squarederror` | **184.37** | **315.38** | **37.11%** |
-| **XGBoost (Per Kat)** | **B** | `tweedie` | **1.05** | **1.85** | **44.35%** |
-| Baseline SMA-7 | Overall | - | 151.58 | 310.23 | 50.69% |
-| Baseline SMA-7 | A | - | 251.74 | 400.50 | 50.67% |
-| Baseline SMA-7 | B | - | 1.34 | 2.15 | 56.71% |
+| **XGBoost (Recursive 14d)** | **Overall** | **Campuran** | **34.63** | **148.76** | **39.64%** |
+| **XGBoost (Recursive 14d)** | **A** | `squarederror` | **116.66** | **334.06** | **30.90%** |
+| **XGBoost (Recursive 14d)** | **B** | `tweedie` | **56.89** | **163.70** | **39.23%** |
+| **XGBoost (Recursive 14d)** | **C** | `tweedie` | **14.42** | **72.22** | **67.49%** |
+| Baseline SMA-7 | Overall | - | 41.30 | 182.89 | 47.27% |
+| Baseline SMA-7 | A | - | 150.65 | 439.54 | 39.90% |
+| Baseline SMA-7 | B | - | 66.62 | 175.65 | 45.93% |
+| Baseline SMA-7 | C | - | 15.49 | 78.23 | 72.52% |
 
 ---
 

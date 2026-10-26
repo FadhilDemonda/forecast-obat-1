@@ -168,23 +168,30 @@ def save_model(res: dict, path="models/xgb_forecaster.joblib"):
     }, path)
 
 
-def _print(res):
+def _print(res, daily=None):
     pd.set_option("display.float_format", "{:.2f}".format)
     print(f"Objective: {res['objective']} | pohon: {res['n_trees']} | split: {res['split_date'].date()}")
+    if daily is not None:
+        empty_c = daily.attrs.get("empty_pareto_drugs", 0)
+        if empty_c > 0:
+            print(f"[PERINGATAN] {empty_c} obat memiliki kategori Pareto kosong/NULL dan otomatis diisi 'C'.")
+        multi_c = daily.attrs.get("multi_pareto_drugs", 0)
+        if multi_c > 0:
+            print(f"[INFO] {multi_c} obat memiliki >1 label kategori Pareto (dipilih label dengan total volume terbesar).")
     print("\n== Evaluasi recursive 14 hari (realistis) ==\n", res["metrics_recursive"].to_string(index=False))
     print("\n== Evaluasi one-step-ahead ==\n", res["metrics_onestep"].to_string(index=False))
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--csv", default="data/raw/test1.csv")
+    ap.add_argument("--csv", default="data/raw/groubynama.csv")
     ap.add_argument("--horizon", type=int, default=14)
     a = ap.parse_args()
     daily = load_daily(a.csv)
     os.makedirs("data/processed", exist_ok=True)
     daily.to_csv("data/processed/daily_zero_filled.csv", index=False)
     res = run_pipeline(daily, a.horizon)
-    _print(res)
+    _print(res, daily)
     save_model(res)
     res["forecast"].to_csv("data/processed/forecast.csv", index=False)
     print("\nModel -> models/xgb_forecaster.joblib | Forecast -> data/processed/forecast.csv")

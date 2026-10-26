@@ -3,11 +3,13 @@ import hashlib
 import os
 
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import streamlit as st
 
 from src.data_loader import group_mapping, load_daily
 from src.explain import feature_impact
+from src.evaluation import context_correlations, wape_matrix
 from src.train_xgb import run_pipeline, save_model
 
 # ---------------------------------------------------------------- dark theme for plots
@@ -25,7 +27,7 @@ plt.rcParams.update({
     "legend.edgecolor": "#30363d",
 })
 
-DEFAULT_CSV = "data/raw/test1.csv"
+DEFAULT_CSV = "data/raw/groubynama+spesialis+dokter.csv"
 st.set_page_config(page_title="Forecast Pengeluaran Obat", layout="wide", page_icon="💊")
 
 # Custom Dark Mode styling
@@ -75,7 +77,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-CACHE_VERSION = "v5_clean_zero_forecast"
+CACHE_VERSION = "v7_clinical_context_heatmap"
 
 
 @st.cache_data(show_spinner="Membersihkan data & zero-filling...")
@@ -89,6 +91,32 @@ def get_results(key: str, daily: pd.DataFrame, horizon: int, version: str = CACH
     res = run_pipeline(daily, horizon)
     save_model(res)
     return res
+
+
+def show_heatmap(matrix, *, correlation=False):
+    """Tampilkan nilai tidak terdefinisi sebagai N/A, bukan angka nol."""
+    fig, ax = plt.subplots(figsize=(max(7, len(matrix.columns) * 0.9),
+                                    max(2.5, len(matrix.index) * 0.55)))
+    cmap = plt.get_cmap("RdBu_r" if correlation else "YlOrRd").copy()
+    cmap.set_bad("#374151")
+    values = matrix.to_numpy(dtype=float)
+    masked = np.ma.masked_invalid(values)
+    vmax = 1 if correlation else max(10.0, float(np.nanmax(values)) if np.isfinite(values).any() else 10.0)
+    image = ax.imshow(masked, cmap=cmap, vmin=-1 if correlation else 0, vmax=vmax, aspect="auto")
+    ax.grid(False)
+    ax.set_xticks(range(len(matrix.columns)), matrix.columns, rotation=45, ha="right")
+    ax.set_yticks(range(len(matrix.index)), matrix.index)
+    for row in range(len(matrix.index)):
+        for col in range(len(matrix.columns)):
+            value = values[row, col]
+            text = "N/A" if not np.isfinite(value) else f"{value:.2f}" if correlation else f"{value:.2f}%"
+            dark = abs(value) > 0.6 if correlation else value > vmax * 0.55
+            ax.text(col, row, text, ha="center", va="center", fontsize=9,
+                    color="white" if dark or not np.isfinite(value) else "#111827")
+    fig.colorbar(image, ax=ax, label="Koefisien korelasi" if correlation else "WAPE (%) — lebih kecil lebih baik")
+    fig.tight_layout()
+    st.pyplot(fig)
+    plt.close(fig)
 
 
 st.title("💊 Forecast Pengeluaran Obat Harian (XGBoost)")
@@ -120,6 +148,13 @@ except Exception as e:
 
 with st.expander("Penggabungan varian supplier (cek di sini)"):
     st.dataframe(group_mapping(data_bytes), use_container_width=True, hide_index=True)
+
+empty_pareto = daily.attrs.get("empty_pareto_drugs", 0)
+if empty_pareto > 0:
+    st.warning(f"⚠️ Perhatian: Terdapat {empty_pareto} obat dengan kategori Pareto kosong/NULL di dataset. Kategori otomatis diisi 'C'.")
+multi_pareto = daily.attrs.get("multi_pareto_drugs", 0)
+if multi_pareto > 0:
+    st.info(f"ℹ️ Info: Terdapat {multi_pareto} obat dengan >1 label kategori Pareto antar varian (diambil label bervolume terbesar).")
 
 n_days = daily["tanggal"].nunique()
 if n_days < 45:
@@ -190,7 +225,54 @@ with tab2:
     st.subheader("One-step-ahead (fitur dari data aktual)")
     st.dataframe(res["metrics_onestep"].round(2), use_container_width=True, hide_index=True)
     st.info("WAPE sangat besar pada kategori dengan total aktual kecil/jarang terpakai "
-            "adalah normal: penyebutnya mendekati 0. Lihat MAE untuk perbandingan yang lebih stabil.")
+             "adalah normal: penyebutnya mendekati 0. Lihat MAE untuk perbandingan yang lebih stabil.")
+
+    st.subheader("Heatmap WAPE per kategori")
+    metric_view = st.radio("Evaluasi untuk heatmap WAPE", ["Recursive 14 hari", "One-step-ahead"],
+                           horizontal=True)
+    metric_key = "metrics_recursive" if metric_view == "Recursive 14 hari" else "metrics_onestep"
+    show_heatmap(wape_matrix(res[metric_key]))
+    st.caption("WAPE memakai seluruh obat pada CSV aktif, tidak mengikuti filter obat sidebar. "
+               "Warna lebih gelap berarti error lebih besar. Ini membandingkan XGBoost dengan SMA-7, "
+               "bukan model dengan vs tanpa fitur dokter.")
+
+    st.subheader("Heatmap korelasi dokter, spesialis, dan jenis rawat")
+    col_scope, col_period = st.columns(2)
+    with col_scope:
+        corr_cat = st.selectbox("Kategori untuk korelasi", ["Semua"] + cats)
+        corr_method = st.selectbox("Metode korelasi", ["Pearson", "Spearman"],
+                                   help="Pearson: hubungan linear. Spearman: hubungan berdasarkan peringkat.")
+    with col_period:
+        corr_period = st.selectbox("Periode korelasi", ["Data latih", "Holdout 14 hari", "Data latih + holdout"])
+        context_mode = st.selectbox("Versi fitur konteks", ["Lag 7 hari", "Rolling mean 7 hari", "Hari yang sama"])
+    if corr_period == "Data latih":
+        corr_frame = res["train_features"]
+    elif corr_period == "Holdout 14 hari":
+        corr_frame = res["test_features"]
+    else:
+        corr_frame = pd.concat([res["train_features"], res["test_features"]], ignore_index=True)
+    if corr_cat != "Semua":
+        corr_frame = corr_frame[corr_frame["kategori_pareto"] == corr_cat]
+    suffix = {"Lag 7 hari": "_lag_7", "Rolling mean 7 hari": "_rolling_mean_7", "Hari yang sama": ""}[context_mode]
+    corr, constants = context_correlations(corr_frame, suffix, corr_method.lower())
+    st.caption(f"{len(corr_frame):,} observasi obat-hari pada {corr_frame['tanggal'].nunique()} tanggal. "
+               "Menggunakan seluruh obat dalam kategori pilihan, tidak mengikuti filter sidebar. "
+               "Dokter/spesialis harian dihitung dari transaksi pada CSV aktif, bukan jadwal praktik; "
+               "nilainya berulang untuk setiap obat pada tanggal yang sama.")
+    if corr.empty:
+        st.info("Korelasi belum dapat dihitung: data kurang, qty konstan, atau fitur konteks tidak tersedia/konstan. "
+                "Upload CSV dengan DOKTER, SPESIALIST, dan JENIS RAWAT untuk analisis konteks.")
+    else:
+        show_heatmap(corr, correlation=True)
+        st.download_button("⬇️ Unduh korelasi (CSV)", corr.to_csv().encode("utf-8-sig"),
+                           "korelasi_konteks.csv", "text/csv")
+    if constants:
+        st.caption("Dikeluarkan karena konstan/kosong (korelasi tidak terdefinisi): " + ", ".join(constants))
+    st.warning("Korelasi bukan bukti bahwa fitur dokter menurunkan WAPE. Korelasi gabungan dapat dipengaruhi "
+               "perbedaan skala antarobat dan pola hari pelayanan. Qty per jenis rawat/spesialis pada hari "
+               "yang sama merupakan bagian dari target qty obat, sehingga hubungannya bersifat mekanis "
+               "dan tidak boleh digunakan sebagai input forecast hari tersebut. Untuk mengukur manfaat "
+               "dokter, bandingkan model dengan/tanpa fitur dokter pada obat, periode, dan split yang sama.")
 
     ho = res["holdout"]
     rid = st.selectbox("Aktual vs prediksi (holdout)", sorted(ho["id_obat"].unique()),
